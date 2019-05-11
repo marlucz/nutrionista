@@ -9,7 +9,92 @@
 </head>
 
 <body>
-    <h1>Nutrionista App</h1>
+    <div class="container">
+        <header class="header">
+            <img src="./img/logo_full.png" alt="logo image" class="logo">
+
+            <form action="#" class="search">
+                <input type="text" class="search__input" placeholder="Search recipe">
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="./img/sprite.svg#icon-search"></use>
+                    </svg>
+                </button>
+            </form>
+        </header>
+
+        <div class="content">
+            <nav class="side-nav">
+                <ul class="side-nav">
+                    <li class="side-nav__item side-nav__item--active" data-nav="recipes">
+                        <a href="#" class="side-nav__link">
+                            <svg class="side-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-spoon-knife"></use>
+                            </svg>
+                            <span>Recipes</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link" data-nav="shopping-cart">
+                            <svg class="side-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-cart"></use>
+                            </svg>
+                            <span>Shopping List</span>
+                        </a>
+                    </li>
+                    <li class="side-nav__item">
+                        <a href="#" class="side-nav__link" data-nav="favourites">
+                            <svg class="side-nav__icon">
+                                <use xlink:href="img/sprite.svg#icon-heart"></use>
+                            </svg>
+                            <span>Favourites</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="footer">
+                    <ul class="footer-list">
+                        <li class="footer-list__item" data-footer="facebook">
+                            <a href="#" class="footer-list__link">
+                                <svg class="footer-list__icon">
+                                    <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer-list__item" data-footer="instagram">
+                            <a href="#" class="footer-list__link">
+                                <svg class="footer-list__icon">
+                                    <use xlink:href="img/sprite.svg#icon-instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer-list__item" data-footer="youtube">
+                            <a href="#" class="footer-list__link">
+                                <svg class="footer-list__icon">
+                                    <use xlink:href="img/sprite.svg#icon-youtube"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="footer-list__item" data-footer="github">
+                            <a href="#" class="footer-list__link">
+                                <svg class="footer-list__icon">
+                                    <use xlink:href="img/sprite.svg#icon-github"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </nav>
+        </div>
+
+
+
+
+
+
+    </div>
 </body>
 
 </html>
