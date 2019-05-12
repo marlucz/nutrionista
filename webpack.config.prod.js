@@ -19,7 +19,7 @@ module.exports = function (env, argv) {
         plugins: [
             new CleanWebpackPlugin(),
             new HtmlWebpackPlugin({
-                title: 'Webpack starter project',
+                title: 'Nutrionista',
                 template: path.resolve('./src/index.html')
             }),
             new MiniCssExtractPlugin({
