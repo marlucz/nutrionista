@@ -16,7 +16,7 @@
             <form action="#" class="search">
                 <input type="text" class="search__input" placeholder="Search recipe">
                 <button class="search__button">
-                    <svg class="search__icon">
+                    <svg class="icon icon-search">
                         <use xlink:href="./img/sprite.svg#icon-search"></use>
                     </svg>
                 </button>
@@ -28,7 +28,7 @@
                 <ul class="side-nav">
                     <li class="side-nav__item side-nav__item--active" data-nav="recipes">
                         <a href="#" class="side-nav__link">
-                            <svg class="side-nav__icon">
+                            <svg class="icon icon__side-nav">
                                 <use xlink:href="./img/sprite.svg#icon-spoon-knife">Recipes</use>
                             </svg>
                             <span>Recipes</span>
@@ -36,7 +36,7 @@
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link" data-nav="shopping-cart">
-                            <svg class="side-nav__icon">
+                            <svg class="icon icon__side-nav">
                                 <use xlink:href="./img/sprite.svg#icon-cart"></use>
                             </svg>
                             <span>Shopping List</span>
@@ -44,7 +44,7 @@
                     </li>
                     <li class="side-nav__item">
                         <a href="#" class="side-nav__link" data-nav="favourites">
-                            <svg class="side-nav__icon">
+                            <svg class="icon icon__side-nav">
                                 <use xlink:href="./img/sprite.svg#icon-heart"></use>
                             </svg>
                             <span>Favourites</span>
@@ -56,28 +56,28 @@
                     <ul class="footer-list">
                         <li class="footer-list__item" data-footer="facebook">
                             <a href="#" class="footer-list__link">
-                                <svg class="footer-list__icon">
+                                <svg class="icon icon__footer-list">
                                     <use xlink:href="./img/sprite.svg#icon-facebook"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer-list__item" data-footer="instagram">
                             <a href="#" class="footer-list__link">
-                                <svg class="footer-list__icon">
+                                <svg class="icon icon__footer-list">
                                     <use xlink:href="./img/sprite.svg#icon-instagram"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer-list__item" data-footer="youtube">
                             <a href="#" class="footer-list__link">
-                                <svg class="footer-list__icon">
+                                <svg class="icon icon__footer-list">
                                     <use xlink:href="./img/sprite.svg#icon-youtube"></use>
                                 </svg>
                             </a>
                         </li>
                         <li class="footer-list__item" data-footer="github">
                             <a href="#" class="footer-list__link">
-                                <svg class="footer-list__icon">
+                                <svg class="icon icon__footer-list">
                                     <use xlink:href="./img/sprite.svg#icon-github"></use>
                                 </svg>
                             </a>
@@ -92,7 +92,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_heart">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -110,7 +110,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_hear">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -128,7 +128,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_hear">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -146,7 +146,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_hear">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -164,7 +164,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_hear">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -182,7 +182,7 @@
                         <a class="results__link results__link--active">
                             <figure class="results__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="results__like">
+                                <svg class="icon icon_hear">
                                     <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
                                 </svg>
                             </figure>
@@ -202,8 +202,8 @@
 
                 <nav class="results__pagination pagination">
                     <button class="pagination__control pagination__control_prev">
-                        <svg class="search__icon">
-                            <use href="./img/sprite.svg#icon-arrow-left2"></use>
+                        <svg class="icon icon__prev">
+                            <use xlink:href="./img/sprite.svg#icon-arrow-left2"></use>
                         </svg>
                     </button>
                     <ol class="pagination__list">
@@ -214,8 +214,8 @@
                         <li class="pagination__group"><a href="#" class="pagination__item">5</a></li>
                     </ol>
                     <button class="pagination__control pagination__control_next">
-                        <svg class="">
-                            <use href="./img/sprite.svg#icon-arrow-right2"></use>
+                        <svg class="icon icon__next">
+                            <use xlink:href="./img/sprite.svg#icon-arrow-right2"></use>
                         </svg>
                     </button>
                 </nav>
@@ -226,10 +226,6 @@
                     <h2 class="recipe__title">Green Smothie For Your Health</h2>
                 </figure>
                 <div class="recipe__general">
-                    <div class="recipe__info">
-                        <span class="recipe__info-title recipe__info-title--calories">Calories per serving</span>
-                        <span class="recipe__info-value">500 kcal</span>
-                    </div>
                     <div class="recipe__info">
                         <span class="recipe__info-title recipe__info-title--time">Time</span>
                         <span class="recipe__info-value">50 minutes</span>
@@ -248,36 +244,267 @@
                 </div>
 
 
-                <div class="recipe__ingredient">
-                    <h3 class="recipe__ingredient-heading">Ingredients</h3>
-                    <div class="recipe__servings">
-
+                <div class="recipe__ingredients">
+                    <div class="recipe__ingredients-heading">
+                        <h3 class="heading__tertiary recipe__ingredients-heading">Ingredients</h3>
+                        <div class="recipe__servings">
+                            <button class="btn btn__minus">
+                                <svg class="icon icon__minus">
+                                    <use xlink:href="./img/sprite.svg#icon-minus"></use>
+                                </svg>
+                            </button>
+                            <span class="recipe__servings-text">Servings</span>
+                            <span class="recipe__servings-value">1</span>
+                            <button class="btn btn__plus">
+                                <svg class="icon icon__plus">
+                                    <use xlink:href="./img/sprite.svg#icon-plus"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="btn btn__shopping">
+                            <svg class="icon icon__shopping">
+                                <use xlink:href="./img/sprite.svg#icon-cart"></use>
+                            </svg>
+                        </button>
+                        <button class="btn btn__likes">
+                            <svg class="icon icon__heart">
+                                <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
+                            </svg>
+                        </button>
                     </div>
+                    <ul class="recipe__ingredients-list">
+                        <li class="recipe__ingredient">
+                            <svg class="icon icon__checkmark">
+                                <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
+                            </svg>
+                            <div class="recipe__ingredient-count">200
+                                <span class="recipe__ingredient-count--unit">g</span>
+                            </div>
+                            <div class="recipe__ingredient-name">
+                                Cheese
+                            </div>
+                        </li>
+                        <li class="recipe__ingredient">
+                            <svg class="icon icon__checkmark">
+                                <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
+                            </svg>
+                            <div class="recipe__ingredient-count">200
+                                <span class="recipe__ingredient-count--unit">g</span>
+                            </div>
+                            <div class="recipe__ingredient-name">
+                                Cheese
+                            </div>
+                        </li>
+                        <li class="recipe__ingredient">
+                            <svg class="icon icon__checkmark">
+                                <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
+                            </svg>
+                            <div class="recipe__ingredient-count">200
+                                <span class="recipe__ingredient-count--unit">g</span>
+                            </div>
+                            <div class="recipe__ingredient-name">
+                                Cheese
+                            </div>
+                        </li>
+                        <li class="recipe__ingredient">
+                            <svg class="icon icon__checkmark">
+                                <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
+                            </svg>
+                            <div class="recipe__ingredient-count">200
+                                <span class="recipe__ingredient-count--unit">g</span>
+                            </div>
+                            <div class="recipe__ingredient-name">
+                                Cheese
+                            </div>
+                        </li>
+                        <li class="recipe__ingredient">
+                            <svg class="icon icon__checkmark">
+                                <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
+                            </svg>
+                            <div class="recipe__ingredient-count">200
+                                <span class="recipe__ingredient-count--unit">g</span>
+                            </div>
+                            <div class="recipe__ingredient-name">
+                                Cheese
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-
+                <div class="recipe__nutrients">
+                    <h3 class="heading__tertiary recipe__nutrients-heading">Nutrition Facts</h3>
+                    <ul class="recipe__nutrients-list recipe__nutrients-list--basic">
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Calories</span>
+                            <span class="nutrient__unit">500 kcal</span>
+                            <span class="nutrient__quantity" title="daily value">20%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Protein</span>
+                            <span class="nutrient__unit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Carbs</span>
+                            <span class="nutrient__unit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Fats</span>
+                            <span class="nutrient__unit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                    </ul>
+                    <button class="btn show_nutrients">Show more</button>
+                    <ul class="recipe__nutrients-list recipe__nutrients-list--more">
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Cholesterol</span>
+                            <span class="nutrient__unit">50mg</span>
+                            <span class="nutrient__quantity" title="daily value">20%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Vitamin1</span>
+                            <span class="nutrient__vunit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Vitamin2</span>
+                            <span class="nutrient__unit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                        <li class="recipe__nutrient">
+                            <span class="nutrient__name">Vitamin3</span>
+                            <span class="nutrient__unit">1g</span>
+                            <span class="nutrient__quantity" title="daily value">5%</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="recipe__making">
+                    <h3 class="heading__tertiary recipe__making-heading">
+                        How to make it
+                    </h3>
+                    <p class="recipe__making-text">Full recipe directions can be found on
+                        <span class="recipe__author">Jon Doe</span>'s website</p>
+                    <a href="http://leitesculinaria.com/94320/recipes-breakfast-pizza.html" class="btn recipe-source" target="_blank">
+                    <span>Get Recipe</span>
+                    </a>
+                </div>
+            </section>
+            <section class="shopping">
+                <h2 class="heading__secondary">Shopping List</h2>
+                <ul class="shopping__list">
+                    <li class="shopping__item">
+                        <p class="shopping__name">Cheese</p>
+                        <p class="shopping__count">100g</p>
+                        <button class="btn shopping-delete">
+                            <svg class="icon icon__cross">
+                                <use xlink:href="./img/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="shopping__item">
+                        <p class="shopping__name">Cheese</p>
+                        <p class="shopping__count">100g</p>
+                        <button class="btn shopping-delete">
+                            <svg class="icon icon__cross">
+                                <use xlink:href="./img/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="shopping__item">
+                        <p class="shopping__name">Cheese</p>
+                        <p class="shopping__count">100g</p>
+                        <button class="btn shopping-delete">
+                            <svg class="icon icon__cross">
+                                <use xlink:href="./img/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="shopping__item">
+                        <p class="shopping__name">Cheese</p>
+                        <p class="shopping__count">100g</p>
+                        <button class="btn shopping-delete">
+                            <svg class="icon icon__cross">
+                                <use xlink:href="./img/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="shopping__item">
+                        <p class="shopping__name">Cheese</p>
+                        <p class="shopping__count">100g</p>
+                        <button class="btn shopping-delete">
+                            <svg class="icon icon__cross">
+                                <use xlink:href="./img/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+            <section class="likes">
+                <h3 class="heading__tertiary">Your Favourite Recipes</h3>
+                <ul class="likes__list">
+                    <li>
+                        <a class="likes__link">
+                            <figure class="likes__fig">
+                                <img src="./img/placeholder.png" alt="placeholder photo">
+                                <svg class="icon iconheartlike">
+                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
+                                </svg>
+                            </figure>
+                            <div class="likes__data">
+                                <h4 class="likes__name">Green Smoothie for your health</h4>
+                                <ul class="likes__nutritions">
+                                    <li class="likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
+                                    <li class="likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
+                                    <li class="likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
+                                    <li class="likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
+                                    <li class="likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="likes__link">
+                            <figure class="likes__fig">
+                                <img src="./img/placeholder.png" alt="placeholder photo">
+                                <svg class="icon iconheartlike">
+                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
+                                </svg>
+                            </figure>
+                            <div class="likes__data">
+                                <h4 class="likes__name">Green Smoothie for your health</h4>
+                                <ul class="likes__nutritions">
+                                    <li class="likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
+                                    <li class="likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
+                                    <li class="likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
+                                    <li class="likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
+                                    <li class="likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="likes__link">
+                            <figure class="likes__fig">
+                                <img src="./img/placeholder.png" alt="placeholder photo">
+                                <svg class="icon iconheartlike">
+                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
+                                </svg>
+                            </figure>
+                            <div class="likes__data">
+                                <h4 class="likes__name">Green Smoothie for your health</h4>
+                                <ul class="likes__nutritions">
+                                    <li class="likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
+                                    <li class="likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
+                                    <li class="likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
+                                    <li class="likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
+                                    <li class="likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
         </div>
-
-
-
-
-
-
-        </section>
-
-
-
-
-
-
-
-
-    </div>
-
-
-
-
-
-
     </div>
 </body>
 

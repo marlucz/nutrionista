@@ -1,5 +1,21 @@
-h1 {
-    text-align: center;
-    border-bottom: 1px solid black;
-    padding-bottom: 10px;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+@media only screen and (max-width: 68.75em) {
+    html {
+        font-size: 50%;
+    }
 }
