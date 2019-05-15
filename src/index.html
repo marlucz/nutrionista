@@ -5,14 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <title>Nutrionista - Recipe App</title>
 </head>
 
 <body>
     <div class="container">
         <header class="header">
             <img src="./img/logo_full.png" alt="logo image" class="logo">
-
+            <svg class="icon icon-search">
+                <use xlink:href="./img/logo_full.svg"></use>
+            </svg>
             <form action="#" class="search">
                 <input type="text" class="search__input" placeholder="Search recipe">
                 <button class="search__button">
@@ -51,39 +54,6 @@
                         </a>
                     </li>
                 </ul>
-
-                <div class="footer">
-                    <ul class="footer-list">
-                        <li class="footer-list__item" data-footer="facebook">
-                            <a href="#" class="footer-list__link">
-                                <svg class="icon icon__footer-list">
-                                    <use xlink:href="./img/sprite.svg#icon-facebook"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="footer-list__item" data-footer="instagram">
-                            <a href="#" class="footer-list__link">
-                                <svg class="icon icon__footer-list">
-                                    <use xlink:href="./img/sprite.svg#icon-instagram"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="footer-list__item" data-footer="youtube">
-                            <a href="#" class="footer-list__link">
-                                <svg class="icon icon__footer-list">
-                                    <use xlink:href="./img/sprite.svg#icon-youtube"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="footer-list__item" data-footer="github">
-                            <a href="#" class="footer-list__link">
-                                <svg class="icon icon__footer-list">
-                                    <use xlink:href="./img/sprite.svg#icon-github"></use>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </nav>
 
             <section class="results">
@@ -504,6 +474,38 @@
                     </li>
                 </ul>
             </section>
+            <footer class="footer">
+                <ul class="footer-list">
+                    <li class="footer-list__item" data-footer="facebook">
+                        <a href="#" class="footer-list__link">
+                            <svg class="icon icon__footer-list">
+                                <use xlink:href="./img/sprite.svg#icon-facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-list__item" data-footer="instagram">
+                        <a href="#" class="footer-list__link">
+                            <svg class="icon icon__footer-list">
+                                <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-list__item" data-footer="youtube">
+                        <a href="#" class="footer-list__link">
+                            <svg class="icon icon__footer-list">
+                                <use xlink:href="./img/sprite.svg#icon-youtube"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="footer-list__item" data-footer="github">
+                        <a href="#" class="footer-list__link">
+                            <svg class="icon icon__footer-list">
+                                <use xlink:href="./img/sprite.svg#icon-github"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
         </div>
     </div>
 </body>
