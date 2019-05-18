@@ -1,10 +1,12 @@
 .container {
-    // height: 100vh;
+    min-height: 100vh;
+    width: 100%;
     display: grid;
-    grid-template-columns: 10rem 1fr 1fr;
-    grid-template-rows: 50vh 50vh;
-    grid-template-areas: "nav search recipe"
-        "footer search recipe";
+    grid-template-areas:
+        "nav content"
+        "footer content";
+    grid-template-columns: 10rem 1fr;
+    grid-template-rows: 1fr min-content;
 }
 
 
@@ -18,6 +20,7 @@
 .nav {
     &__list {
         &-item {
+            text-align: center;
             position: relative;
             font-size: 1.5rem;
             line-height: 2;
@@ -31,14 +34,14 @@
                 }
             }
 
-            &--active:after {
+            &--active::after {
                 content: "";
                 display: block;
                 position: absolute;
                 left: 0;
                 top: 0;
                 bottom: 0;
-                width: 2px;
+                width: 4px;
                 background-color: var(--color-secondary);
             }
         }
@@ -53,9 +56,8 @@
     }
 
     &__icon {
-        height: 6rem;
-        width: 6rem;
-        fill: var(--color-secondary);
+        height: 4rem;
+        width: 4rem;
     }
 }
 
@@ -77,8 +79,25 @@
     }
 }
 
+
+.content {
+    grid-area: content;
+    display: grid;
+    grid-template-areas: "results recipe";
+    grid-template-columns: 1fr 1fr;
+}
+
 .results {
-    grid-area: search;
+    grid-area: results;
+
+    &__list {
+        display: grid;
+
+    }
+
+    &__fig {
+        position: relative;
+    }
 }
 
 .recipe {
@@ -88,4 +107,25 @@
 .footer {
     grid-area: footer;
     background-color: var(--color-primary);
+    padding: 2rem 0;
+    text-align: center;
+
+    &-list {
+        padding-bottom: 2rem;
+
+        &__item {
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+}
+
+.shopping,
+.likes {
+    display: none;
 }

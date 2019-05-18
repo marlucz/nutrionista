@@ -1,10 +1,18 @@
+// ICON
 .icon {
-    height: 5rem;
-    width: 5rem;
+    // height: 5rem; // to delete after styling all icons
+    // width: 5rem; // to delete after styling all icons
 
-    &__nav {}
+    &--secondary {
+        fill: var(--color-secondary);
+    }
+
+    &--primary {
+        fill: var(--color-secondary);
+    }
 }
 
+//  LIST NORMALIZE 
 .list {
     list-style: none;
 
@@ -13,11 +21,64 @@
     }
 }
 
+// LINKS NORMALIZE 
 .link {
+    display: block;
     text-decoration: none;
 
     &:link,
     &:visited {
         color: inherit;
+    }
+}
+
+// SEARCH
+.search {
+    flex: 0 0 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        font-family: inherit;
+        font-size: 1.5rem;
+        color: inherit;
+        border: none;
+        border-bottom: 1px solid var(--color-dark);
+        padding: .7rem 2rem;
+        width: 80%;
+        transition: all .2s;
+        margin-right: -3.25rem;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid var(--color-primary);
+            color: var(--color-secondary);
+        }
+
+    }
+
+    &__button {
+        border: none;
+        background-color: transparent;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-dark);
     }
 }
