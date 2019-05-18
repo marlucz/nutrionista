@@ -1,0 +1,23 @@
+.icon {
+    height: 5rem;
+    width: 5rem;
+
+    &__nav {}
+}
+
+.list {
+    list-style: none;
+
+    &__item {
+        text-decoration: none;
+    }
+}
+
+.link {
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+}

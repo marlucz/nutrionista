@@ -1,0 +1,35 @@
+:root {
+    // COLOR VARIABLES
+    --color-primary: #FEBD67;
+    --color-secondary: #72A065;
+
+    --color-dark: #29395F;
+    --color-grey: #F4F6F8;
+    --color-light: #FFFFFF;
+
+    // FONT VARIABLES
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-dark);
+}
