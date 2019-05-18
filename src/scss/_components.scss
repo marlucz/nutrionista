@@ -1,15 +1,17 @@
-// ICON
+// ICON COLORS
 .icon {
     // height: 5rem; // to delete after styling all icons
     // width: 5rem; // to delete after styling all icons
+    display: inline-block;
 
     &--secondary {
         fill: var(--color-secondary);
     }
 
     &--primary {
-        fill: var(--color-secondary);
+        fill: var(--color-primary);
     }
+
 }
 
 //  LIST NORMALIZE 
@@ -35,10 +37,10 @@
 // SEARCH
 .search {
     flex: 0 0 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
 
     &__input {
         font-family: inherit;

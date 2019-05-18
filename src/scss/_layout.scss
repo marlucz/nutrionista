@@ -84,20 +84,74 @@
     grid-area: content;
     display: grid;
     grid-template-areas: "results recipe";
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
 }
 
 .results {
     grid-area: results;
+    padding: 3rem 5rem;
 
     &__list {
         display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
 
+    &__link {
+        display: grid;
+        background-color: var(--color-grey);
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__fig {
         position: relative;
+        display: grid;
+        grid-template-rows: 20rem 1fr 1fr;
+
+        &-icon {
+            position: absolute;
+            left: 2rem;
+            top: 2rem;
+            height: 4rem;
+            width: 4rem;
+            padding: 4px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
     }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__data {
+
+        padding: 10px;
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        padding-bottom: 5px;
+    }
+
+    &__nutritions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+        justify-content: space-between;
+        font-size: 1.2rem;
+    }
+
+    &__nutrition {
+        display: grid;
+    }
+
+
 }
 
 .recipe {
@@ -121,6 +175,7 @@
     &__icon {
         width: 3rem;
         height: 3rem;
+
     }
 
 }
