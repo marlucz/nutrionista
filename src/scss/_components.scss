@@ -12,6 +12,29 @@
         fill: var(--color-primary);
     }
 
+    &--small {
+        height: 1.3rem;
+        width: 1.3rem;
+    }
+
+
+}
+
+// ------------------- BUTTON -------------------
+
+.btn {
+    background: none;
+    border: 0;
+
+    &__servings {
+        border: 2px solid var(--color-secondary);
+        border-radius: 50%;
+        font-size: 3rem;
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+    }
 }
 
 // ------------------- LIST NORMALIZE -------------------
@@ -37,6 +60,7 @@
 // ------------------- SEARCH -------------------
 .search {
     padding: 0;
+    padding-bottom: 2rem;
     margin: 0;
     grid-area: search;
     flex: 0 0 50%;
@@ -114,6 +138,7 @@
         padding: 0;
         display: flex;
         justify-content: center;
+
     }
 
     &__item {
@@ -123,13 +148,12 @@
     &__link {
         display: block;
         padding: .5em 1em;
-        border: 1px solid #999;
-        border-radius: .2em;
         text-decoration: none;
+        color: var(--color-secondary);
     }
 
     &__link[aria-current="page"] {
-        background-color: #333;
-        color: #fff;
+        border: 2px solid var(--color-primary);
+        border-radius: 50%;
     }
 }

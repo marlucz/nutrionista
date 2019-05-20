@@ -101,8 +101,7 @@
     grid-template-areas: "search"
         "results-list"
         "pagination";
-    grid-template-rows: 5vh minmax(min-content, 1fr) 5vh;
-    grid-gap: 2rem;
+    grid-template-rows: 5vh 85vh 5vh;
 
     &::after {
         content: '';
@@ -118,11 +117,11 @@
         grid-area: results-list;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-        grid-gap: 2rem;
-        overflow: hidden;
     }
 
     &__link {
+        display: grid;
+        grid-template-rows: minmax(min-content, 1fr) min-content;
 
         &:hover {
             cursor: pointer;
@@ -180,6 +179,52 @@
 .recipe {
     grid-area: recipe;
     max-height: 100vh;
+    padding: 4.5rem 2.5rem 3rem 0;
+    position: relative;
+
+    &__fig {
+        position: relative;
+
+        &-caption {
+            position: absolute;
+            top: 70%;
+            left: 0;
+            padding: 2rem 2rem 2rem 5rem;
+            color: var(--color-light);
+            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 2rem;
+        }
+    }
+
+    &__img {
+        display: block;
+        height: 50vh;
+        width: 100%;
+    }
+
+    &__general {}
+
+    &__ingredients {
+        position: absolute;
+        width: 35%;
+        left: 60%;
+        top: 25vh;
+        background-color: var(--color-grey);
+        padding: 1rem;
+    }
+
+    &__servings {
+        display: flex;
+        align-items: center;
+
+        &-text,
+        &-value {
+            font-size: 1.2rem;
+            padding: 7px;
+            font-weight: 700;
+        }
+    }
+
 }
 
 // ----------------- SIDE FOOTER ------------------
