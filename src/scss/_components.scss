@@ -1,4 +1,4 @@
-// ICON COLORS
+// ------------------- ICON COLORS -------------------
 .icon {
     // height: 5rem; // to delete after styling all icons
     // width: 5rem; // to delete after styling all icons
@@ -14,7 +14,7 @@
 
 }
 
-//  LIST NORMALIZE 
+// ------------------- LIST NORMALIZE -------------------
 .list {
     list-style: none;
 
@@ -23,7 +23,7 @@
     }
 }
 
-// LINKS NORMALIZE 
+// ------------------- LINKS NORMALIZE -------------------
 .link {
     display: block;
     text-decoration: none;
@@ -34,13 +34,15 @@
     }
 }
 
-// SEARCH
+// ------------------- SEARCH -------------------
 .search {
+    padding: 0;
+    margin: 0;
+    grid-area: search;
     flex: 0 0 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 3rem;
 
     &__input {
         font-family: inherit;
@@ -82,5 +84,52 @@
         height: 2rem;
         width: 2rem;
         fill: var(--color-dark);
+    }
+}
+
+
+// ------------------- PAGINATION -------------------
+/* class to hide content visually leaving it available to screenreaders.
+ Thank you Mozilla Developer
+*/
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+
+.pagination {
+    grid-area: pagination;
+    font-size: 1.5rem;
+
+    &__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__item {
+        margin: 0 1px;
+    }
+
+    &__link {
+        display: block;
+        padding: .5em 1em;
+        border: 1px solid #999;
+        border-radius: .2em;
+        text-decoration: none;
+    }
+
+    &__link[aria-current="page"] {
+        background-color: #333;
+        color: #fff;
     }
 }

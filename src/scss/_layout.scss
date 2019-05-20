@@ -1,6 +1,6 @@
 .container {
-    min-height: 100vh;
     width: 100%;
+    overflow: hidden;
     display: grid;
     grid-template-areas:
         "nav content"
@@ -9,7 +9,7 @@
     grid-template-rows: 1fr min-content;
 }
 
-
+// ----------------- SIDE NAVIGATION ------------------
 .sidebar {
     grid-area: nav;
     background-color: var(--color-primary);
@@ -80,27 +80,49 @@
 }
 
 
+// ----------------- MAIN CONTENT ------------------
+
 .content {
     grid-area: content;
     display: grid;
     grid-template-areas: "results recipe";
     grid-template-columns: 1.2fr 1fr;
+    padding: 2rem 0;
 }
+
+
+// ----------------- SEARCH AND SHOW RESULTS ------------------
 
 .results {
     grid-area: results;
-    padding: 3rem 5rem;
+    padding: 0 5rem;
+    position: relative;
+    display: grid;
+    grid-template-areas: "search"
+        "results-list"
+        "pagination";
+    grid-template-rows: 5vh minmax(min-content, 1fr) 5vh;
+    grid-gap: 2rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 7.5vh;
+        right: calc(2.5rem - 1px);
+        width: 1px;
+        height: 85vh;
+        background-color: var(--color-secondary);
+    }
 
     &__list {
+        grid-area: results-list;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        grid-gap: 2.5rem;
-        margin-bottom: 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-gap: 2rem;
+        overflow: hidden;
     }
 
     &__link {
-        display: grid;
-        background-color: var(--color-grey);
 
         &:hover {
             cursor: pointer;
@@ -109,8 +131,6 @@
 
     &__fig {
         position: relative;
-        display: grid;
-        grid-template-rows: 20rem 1fr 1fr;
 
         &-icon {
             position: absolute;
@@ -127,12 +147,11 @@
     &__img {
         display: block;
         width: 100%;
-        height: 100%;
     }
 
     &__data {
-
         padding: 10px;
+        background-color: var(--color-grey);
     }
 
     &__name {
@@ -145,6 +164,7 @@
         grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
         justify-content: space-between;
         font-size: 1.2rem;
+        grid-gap: 10px;
     }
 
     &__nutrition {
@@ -152,11 +172,17 @@
     }
 
 
+
 }
+
+// ----------------- SHOW SELECTED RECIPE ------------------
 
 .recipe {
     grid-area: recipe;
+    max-height: 100vh;
 }
+
+// ----------------- SIDE FOOTER ------------------
 
 .footer {
     grid-area: footer;
@@ -179,6 +205,8 @@
     }
 
 }
+
+// ----------------- LEFT SLIDE MODALS ------------------
 
 .shopping,
 .likes {
