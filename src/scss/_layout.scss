@@ -1,12 +1,13 @@
 .container {
     width: 100%;
+    height: 100vh;
     overflow: hidden;
     display: grid;
     grid-template-areas:
         "nav content"
         "footer content";
     grid-template-columns: 10rem 1fr;
-    grid-template-rows: 1fr min-content;
+    grid-template-rows: 1fr 1fr;
 }
 
 // ----------------- SIDE NAVIGATION ------------------
@@ -23,15 +24,15 @@
             text-align: center;
             position: relative;
             font-size: 1.5rem;
-            line-height: 2;
+            line-height: 1.2;
 
             &:hover {
                 background-color: var(--color-secondary);
                 color: var(--color-primary);
+            }
 
-                & .nav__icon {
-                    fill: var(--color-primary);
-                }
+            &:hover .nav__icon {
+                fill: var(--color-primary);
             }
 
             &--active::after {
@@ -47,18 +48,19 @@
         }
     }
 
+    &__icon {
+        height: 4rem;
+        width: 4rem;
+        fill: var(--color-secondary);
+    }
+
     &__link {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 2rem;
-
+        padding-top: 1rem;
     }
 
-    &__icon {
-        height: 4rem;
-        width: 4rem;
-    }
 }
 
 .header {
@@ -95,13 +97,13 @@
 
 .results {
     grid-area: results;
-    padding: 0 5rem;
     position: relative;
     display: grid;
     grid-template-areas: "search"
         "results-list"
         "pagination";
     grid-template-rows: 5vh 85vh 5vh;
+    padding: 0 5rem;
 
     &::after {
         content: '';
@@ -128,18 +130,19 @@
         }
     }
 
-    &__fig {
+    &-fig {
         position: relative;
 
-        &-icon {
+        &__icon {
             position: absolute;
             left: 2rem;
             top: 2rem;
-            height: 4rem;
             width: 4rem;
-            padding: 4px;
+            height: 4rem;
             background-color: #fff;
             border-radius: 50%;
+            padding: 5px;
+            fill: var(--color-primary);
         }
     }
 
@@ -170,8 +173,6 @@
         display: grid;
     }
 
-
-
 }
 
 // ----------------- SHOW SELECTED RECIPE ------------------
@@ -179,7 +180,7 @@
 .recipe {
     grid-area: recipe;
     max-height: 100vh;
-    padding: 4.5rem 2.5rem 3rem 0;
+    padding: 4.5rem 2.5rem 0 0;
     position: relative;
 
     &__fig {
@@ -213,6 +214,17 @@
         padding: 1rem;
     }
 
+    &__ingredient {
+        display: flex;
+
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--color-secondary);
+            margin-right: 2rem;
+        }
+    }
+
     &__servings {
         display: flex;
         align-items: center;
@@ -231,22 +243,32 @@
 
 .footer {
     grid-area: footer;
+    display: grid;
+    align-items: end;
     background-color: var(--color-primary);
-    padding: 2rem 0;
     text-align: center;
 
     &-list {
-        padding-bottom: 2rem;
+        padding-bottom: 2.5rem;
 
         &__item {
-            padding-bottom: 2rem;
+            padding: 1rem;
+
+            &:hover {
+                background-color: var(--color-secondary);
+            }
+
+            &:hover .footer__icon {
+                fill: var(--color-primary);
+            }
         }
+
     }
 
     &__icon {
         width: 3rem;
         height: 3rem;
-
+        fill: var(--color-secondary);
     }
 
 }

@@ -1,40 +1,49 @@
-// ------------------- ICON COLORS -------------------
-.icon {
-    // height: 5rem; // to delete after styling all icons
-    // width: 5rem; // to delete after styling all icons
-    display: inline-block;
-
-    &--secondary {
-        fill: var(--color-secondary);
-    }
-
-    &--primary {
-        fill: var(--color-primary);
-    }
-
-    &--small {
-        height: 1.3rem;
-        width: 1.3rem;
-    }
-
-
-}
-
 // ------------------- BUTTON -------------------
 
 .btn {
-    background: none;
-    border: 0;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
 
-    &__servings {
+    &-icon {
+        width: 70%;
+        height: 70%;
+        fill: var(--color-secondary);
+    }
+
+    &-search {
+        height: 2.5rem;
+        width: 2.5rem;
+
+        &:hover .icon-full-btn {
+            fill: var(--color-primary);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &-servings {
         border: 2px solid var(--color-secondary);
         border-radius: 50%;
-        font-size: 3rem;
         width: 3rem;
         height: 3rem;
-        display: flex;
-        justify-content: center;
     }
+
+    &-shopping,
+    &-likes {
+        width: 4rem;
+        height: 4rem;
+    }
+
 }
 
 // ------------------- LIST NORMALIZE -------------------
@@ -84,31 +93,13 @@
             border-bottom: 1px solid var(--color-primary);
             color: var(--color-secondary);
         }
-
-    }
-
-    &__button {
-        border: none;
-        background-color: transparent;
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &:focus {
-            outline: none;
-        }
-
-        &:active {
-            transform: translateY(2px);
-        }
     }
 
     &__icon {
-        height: 2rem;
-        width: 2rem;
-        fill: var(--color-dark);
+        height: 100%;
+        width: 100%;
     }
+
 }
 
 
@@ -157,3 +148,7 @@
         border-radius: 50%;
     }
 }
+
+/* There is no 'icon' component for svgs because there is too much different icons 
+    and I had problems naming them in the name of BEM methodology. I ended up having icon-med, icon-small, icon-heart, icon-primary(for color primary), etc etc. which looks too bootsrappy for me. So I decided to put icons as elements of their parent's block. More code and some code is repeated but works better for me in this case
+*/
