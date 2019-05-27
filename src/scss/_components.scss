@@ -1,3 +1,36 @@
+// ------------------- HEADING -------------------
+
+.heading {
+    font-weight: 700;
+
+    &-primary {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+    }
+
+    &-secondary {
+        position: absolute;
+        top: 70%;
+        left: 0;
+        padding: 2rem 2rem 2rem 5rem;
+        font-size: 2rem;
+        color: var(--color-light);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    &-tertiary {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--color-primary);
+        display: inline-block;
+    }
+
+    &-quarternary {
+        font-size: 1.6rem;
+        padding-bottom: 5px;
+    }
+}
+
 // ------------------- BUTTON -------------------
 
 .btn {
@@ -12,6 +45,10 @@
         width: 70%;
         height: 70%;
         fill: var(--color-secondary);
+
+        &:hover {
+            fill: var(--color-primary);
+        }
     }
 
     &-search {
@@ -36,6 +73,14 @@
         border-radius: 50%;
         width: 3rem;
         height: 3rem;
+
+        &:hover {
+            border: 2px solid var(--color-primary);
+        }
+
+        &:hover .btn-icon {
+            fill: var(--color-primary);
+        }
     }
 
     &-shopping,
@@ -57,7 +102,7 @@
 
 // ------------------- LINKS NORMALIZE -------------------
 .link {
-    display: block;
+    display: inline-block;
     text-decoration: none;
 
     &:link,

@@ -74,11 +74,6 @@
         padding-bottom: 5px;
     }
 
-    &__text {
-        text-transform: uppercase;
-        font-size: 1.4rem;
-        font-weight: 700;
-    }
 }
 
 
@@ -156,10 +151,7 @@
         background-color: var(--color-grey);
     }
 
-    &__name {
-        font-size: 1.6rem;
-        padding-bottom: 5px;
-    }
+
 
     &__nutritions {
         display: grid;
@@ -180,48 +172,61 @@
 .recipe {
     grid-area: recipe;
     max-height: 100vh;
-    padding: 4.5rem 2.5rem 0 0;
+    padding: 5vh 2.5rem 0 0;
     position: relative;
 
     &__fig {
         position: relative;
-
-        &-caption {
-            position: absolute;
-            top: 70%;
-            left: 0;
-            padding: 2rem 2rem 2rem 5rem;
-            color: var(--color-light);
-            background-color: rgba(0, 0, 0, 0.5);
-            font-size: 2rem;
-        }
     }
 
     &__img {
         display: block;
-        height: 50vh;
+        height: 40vh;
         width: 100%;
     }
 
-    &__general {}
+    &__info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+        grid-gap: 5px;
+        width: 60%;
+        padding: 1rem 0 2rem 0;
+
+        &-text {
+            font-size: 1.4rem;
+        }
+    }
 
     &__ingredients {
         position: absolute;
         width: 35%;
         left: 60%;
-        top: 25vh;
+        top: 33vh;
         background-color: var(--color-grey);
-        padding: 1rem;
+        padding: 2rem;
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1.5rem;
+        }
     }
 
     &__ingredient {
         display: flex;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        padding-bottom: 1rem;
 
         &-icon {
             width: 2rem;
-            height: 2rem;
+            height: 1.5rem;
             fill: var(--color-secondary);
             margin-right: 2rem;
+        }
+
+        &-count {
+            padding-right: 2rem;
         }
     }
 
@@ -231,12 +236,72 @@
 
         &-text,
         &-value {
-            font-size: 1.2rem;
-            padding: 7px;
+            font-size: 1.5rem;
+            padding: 5px;
             font-weight: 700;
         }
     }
 
+    &__nutrients {
+        padding-bottom: 2rem;
+
+        &-list {
+            display: grid;
+            padding-bottom: 2rem;
+
+
+            &--basic {
+                width: 60%;
+                grid-template-columns: repeat(4, 1fr);
+                grid-gap: 10px;
+                justify-content: space-between;
+                font-size: 1.5rem;
+                line-height: 1.5;
+            }
+
+            &--more {
+                grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+                grid-gap: 5px;
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    &__nutrient {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        border: 2px solid var(--color-grey);
+
+        &--name {
+            font-weight: 700;
+            padding-bottom: 2px;
+        }
+
+        &--unit {
+            background-color: var(--color-grey);
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__making {
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.6rem;
+        text-align: center;
+
+        &-source {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            background-color: var(--color-primary);
+            border-radius: 1.5rem;
+        }
+    }
 }
 
 // ----------------- SIDE FOOTER ------------------
