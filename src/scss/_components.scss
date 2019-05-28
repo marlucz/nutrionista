@@ -89,6 +89,22 @@
         height: 4rem;
     }
 
+    &-delete {
+        width: 2rem;
+        height: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s;
+    }
+
+    &-unlike {
+        width: 4rem;
+        height: 4rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .5s;
+    }
+
 }
 
 // ------------------- LIST NORMALIZE -------------------

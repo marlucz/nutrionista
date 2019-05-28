@@ -446,13 +446,13 @@
                 </div>
             </section>
             <section class="shopping">
-                <h3 class="heading-tertiary">Shopping List</h3>
+                <h3 class="heading-tertiary shopping__header">Shopping List</h3>
                 <ul class="list shopping__list">
                     <li class="shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
-                        <button class="btn shopping-delete">
-                            <svg class="icon icon__cross">
+                        <button class="btn btn-delete">
+                            <svg class="btn-icon">
                                 <use xlink:href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
@@ -460,8 +460,8 @@
                     <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
-                        <button class="btn shopping-delete">
-                            <svg class="icon icon__cross">
+                        <button class="btn btn-delete">
+                            <svg class="btn-icon">
                                 <use xlink:href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
@@ -469,8 +469,8 @@
                     <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
-                        <button class="btn shopping-delete">
-                            <svg class="icon icon__cross">
+                        <button class="btn btn-delete">
+                            <svg class="btn-icon">
                                 <use xlink:href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
@@ -478,8 +478,8 @@
                     <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
-                        <button class="btn shopping-delete">
-                            <svg class="icon icon__cross">
+                        <button class="btn btn-delete">
+                            <svg class="btn-icon">
                                 <use xlink:href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
@@ -487,8 +487,8 @@
                     <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
-                        <button class="btn shopping-delete">
-                            <svg class="icon icon__cross">
+                        <button class="btn btn-delete">
+                            <svg class="btn-icon">
                                 <use xlink:href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
@@ -496,68 +496,39 @@
                 </ul>
             </section>
             <section class="likes">
-                <h3 class="heading-tertiary">Your Favourite Recipes</h3>
+                <h3 class="heading-tertiary likes__header">Your Favourite Recipes</h3>
                 <ul class="list likes__list">
                     <li class="list__item likes__item">
                         <a class="link likes__link">
                             <figure class="likes__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="icon icon-heart">
-                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
-                                </svg>
                             </figure>
                             <div class="list likes__data">
                                 <h4 class="heading-quarternary">Green Smoothie for your health</h4>
-                                <ul class="list likes__nutritions">
-                                    <li class="list__item likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
-                                    <li class="list__item likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
-                                </ul>
                             </div>
                         </a>
+                        <button class="btn btn-unlike">
+                            <svg class="btn-icon">
+                                <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
+                            </svg>
+                        </button>
                     </li>
                     <li class="list__item likes__item">
                         <a class="link likes__link">
                             <figure class="likes__fig">
                                 <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="icon iconheartlike">
-                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
-                                </svg>
                             </figure>
                             <div class="list likes__data">
                                 <h4 class="heading-quarternary">Green Smoothie for your health</h4>
-                                <ul class="list likes__nutritions">
-                                    <li class="list__item likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
-                                    <li class="list__item likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
-                                </ul>
                             </div>
                         </a>
+                        <button class="btn btn-unlike">
+                            <svg class="btn-icon">
+                                <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
+                            </svg>
+                        </button>
                     </li>
-                    <li class="list__item likes__item">
-                        <a class="link likes__link">
-                            <figure class="likes__fig">
-                                <img src="./img/placeholder.png" alt="placeholder photo">
-                                <svg class="icon iconheartlike">
-                                    <use xlink:href="./img/sprite.svg#icon-heart-full"></use>
-                                </svg>
-                            </figure>
-                            <div class="list likes__data">
-                                <h4 class="heading-quarternary">Green Smoothie for your health</h4>
-                                <ul class="list likes__nutritions">
-                                    <li class="list__item likes__nutritions--item" data-calories="100 kcal">100 kcal</li>
-                                    <li class="list__item likes__nutritions--item" data-protein="Protein 1g">Protein 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-carbs="Carbs 1g">Carbs 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-fats="Fats 1g">Fats 1g</li>
-                                    <li class="list__item likes__nutritions--item" data-prep-time="Time 15min">Time 15min</li>
-                                </ul>
-                            </div>
-                        </a>
-                    </li>
+
                 </ul>
             </section>
 
