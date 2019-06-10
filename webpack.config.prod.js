@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = function (env, argv) {
@@ -26,7 +27,12 @@ module.exports = function (env, argv) {
                 filename: "style.css",
                 chunkFilename: "[id].css"
             }),
-            new MinifyPlugin()
+            new MinifyPlugin(),
+            new CopyPlugin([{
+                test: /\.svg$/,
+                from: 'src/img/',
+                to: 'img/[name].[ext]'
+            }])
         ],
         module: {
             rules: [{
