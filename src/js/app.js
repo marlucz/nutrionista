@@ -3,19 +3,27 @@ import Search from './ctrls/Search';
 import {
     selectors
 } from './ui/selectors';
+import * as searchUI from './ui/searchUI';
 
 
-
+// Event listener on search form submit
 
 selectors.searchForm.addEventListener('submit', e => {
-    console.log(selectors.searchInput.value);
+    recipeCtrl();
     e.preventDefault()
 });
 
 
+// Recipe Controller
 
+const recipeCtrl = async () => {
+    // 1. get input value 
+    const query = searchUI.getInput();
 
+    // 2. pass 
+    console.log(query);
 
+}
 
 
 
