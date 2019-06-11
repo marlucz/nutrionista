@@ -7,9 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const favouritesList = document.querySelector('.likes');
     btnShopping.addEventListener('click', () => {
         shoppingList.classList.toggle('active');
+        favouritesList.classList.remove('active');
     });
     btnFavourites.addEventListener('click', () => {
         favouritesList.classList.toggle('active');
+        shoppingList.classList.remove('active');
     });
 
 });
