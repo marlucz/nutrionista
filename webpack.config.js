@@ -1,3 +1,4 @@
+require("@babel/polyfill");
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -5,9 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
-    entry: [
-        './src/js/app.js'
-    ],
+    entry: ['@babel/polyfill', './src/js/app.js'],
     watch: true,
     watchOptions: {
         aggregateTimeout: 500,

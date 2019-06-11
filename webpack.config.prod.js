@@ -9,9 +9,7 @@ const path = require('path');
 module.exports = function (env, argv) {
     return {
         mode: 'production',
-        entry: [
-            './src/js/app.js'
-        ],
+        entry: ['@babel/polyfill', './src/js/app.js'],
         optimization: {
             minimizer: [
                 new OptimizeCSSAssetsPlugin()
