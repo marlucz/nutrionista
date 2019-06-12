@@ -14,14 +14,34 @@ selectors.searchForm.addEventListener('submit', e => {
 });
 
 
+// Application data controller
+const data = {};
+
 // Recipe Controller
 
 const recipeCtrl = async () => {
-    // 1. get input value 
+    // 1. Get input value 
     const query = searchUI.getInput();
+    //    Check if input is not empty 
+    if (query) {
+        // 2. Pass input value to new Search object
+        data.search = new Search(query);
+        console.log(data.search);
 
-    // 2. pass 
-    console.log(query);
+        // 3. UI loader until search completed
+
+        // 4. Wait for input value to be searched
+        try {
+            await data.search.searchResults();
+            console.log(data.search.recipes);
+        } catch (error) {
+            alert('Something went wrong' + error);
+        }
+
+        // 5. Populate results to UI
+    }
+
+
 
 }
 
@@ -48,34 +68,18 @@ const recipeCtrl = async () => {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const btnShopping = document.querySelector('[data-nav="shopping-cart"]');
+    const btnFavourites = document.querySelector('[data-nav="favourites"]');
+    const shoppingList = document.querySelector('.shopping');
+    const favouritesList = document.querySelector('.likes');
+    btnShopping.addEventListener('click', () => {
+        shoppingList.classList.toggle('active');
+        favouritesList.classList.remove('active');
+    });
+    btnFavourites.addEventListener('click', () => {
+        favouritesList.classList.toggle('active');
+        shoppingList.classList.remove('active');
+    });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     const btnShopping = document.querySelector('[data-nav="shopping-cart"]');
-//     const btnFavourites = document.querySelector('[data-nav="favourites"]');
-//     const shoppingList = document.querySelector('.shopping');
-//     const favouritesList = document.querySelector('.likes');
-//     btnShopping.addEventListener('click', () => {
-//         shoppingList.classList.toggle('active');
-//         favouritesList.classList.remove('active');
-//     });
-//     btnFavourites.addEventListener('click', () => {
-//         favouritesList.classList.toggle('active');
-//         shoppingList.classList.remove('active');
-//     });
-
-// });
+});
