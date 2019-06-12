@@ -8,11 +8,15 @@ import * as searchUI from './ui/searchUI';
 
 // Event listener on search form submit
 
-selectors.searchForm.addEventListener('submit', e => {
-    recipeCtrl();
-    e.preventDefault()
-});
+// selectors.searchForm.addEventListener('submit', e => {
+//     recipeCtrl();
+//     e.preventDefault()
+// });
 
+
+window.addEventListener('DOMContentLoaded', () => {
+    recipeCtrl();
+});
 
 // Application data controller
 const data = {};
@@ -21,7 +25,8 @@ const data = {};
 
 const recipeCtrl = async () => {
     // 1. Get input value 
-    const query = searchUI.getInput();
+    // const query = searchUI.getInput();
+    const query = 'pizza'; // only for testing purposes
     //    Check if input is not empty 
     if (query) {
         // 2. Pass input value to new Search object
@@ -34,15 +39,14 @@ const recipeCtrl = async () => {
         try {
             await data.search.searchResults();
             console.log(data.search.recipes);
+
+            // 5. Populate results to UI
+            searchUI.populateResults(data.search.recipes);
         } catch (error) {
             alert('Something went wrong' + error);
         }
 
-        // 5. Populate results to UI
     }
-
-
-
 }
 
 
