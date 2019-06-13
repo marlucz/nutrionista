@@ -4,7 +4,7 @@ import {
 
 export const getInput = () => selectors.searchInput.value;
 
-export const unitPerPerson = (recipe, label) => {
+const unitPerPerson = (recipe, label) => {
     let nutrient;
     const nutrients = recipe.totalNutrients;
     Object.keys(nutrients).forEach((key) => {
@@ -13,6 +13,21 @@ export const unitPerPerson = (recipe, label) => {
         }
     });
     return nutrient;
+};
+
+const titleMaxLength = (title, length = 20) => {
+    const newTitle = [];
+    if (title.length > length) {
+        title.split(' ').reduce((acc, cur) => {
+            if (acc + cur.length <= length) {
+                newTitle.push(cur);
+            }
+            return acc + cur.length;
+        }, 0);
+
+        return `${newTitle.join(' ')} ...`;
+    }
+    return title;
 };
 
 const renderRecipe = (recipe) => {
@@ -26,13 +41,12 @@ const renderRecipe = (recipe) => {
                 </svg>
             </figure>
             <div class="results__data">
-                <h4 class="heading-quarternary">${recipe.label}</h4>
+                <h4 class="heading-quarternary">${titleMaxLength(recipe.label)}</h4>
                 <ul class="list results__nutritions">
                     <li class="list__item results__nutrition">Calories<span class="results__value">${unitPerPerson(recipe, 'Energy')}</span></li>
                     <li class="list__item results__nutrition">Protein<span class="results__value">${unitPerPerson(recipe, 'Protein')}</span></li>
                     <li class="list__item results__nutrition">Carb<span class="results__value">${unitPerPerson(recipe, 'Carbs')}</span></li>
                     <li class="list__item results__nutrition">Fat<span class="results__value">${unitPerPerson(recipe, 'Fat')}</span></li>
-                    <li class="list__item results__nutrition">Time<span class="results__value">${unitPerPerson(recipe, 'Energy')}</span></li>
                 </ul>
             </div>
         </a>

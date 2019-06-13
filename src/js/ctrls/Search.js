@@ -11,7 +11,7 @@ export default class Search {
 
     async searchResults() {
         try {
-            const results = await axios(`https://api.edamam.com/search?q=${this.query}&app_id=${apiID}&app_key=${apiKey}&from=0&to=1`);
+            const results = await axios(`https://api.edamam.com/search?q=${this.query}&app_id=${apiID}&app_key=${apiKey}&from=0&to=9`);
             this.recipes = results.data.hits.map(index => index.recipe);
         } catch (error) {
             alert(error);
