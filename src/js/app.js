@@ -45,9 +45,26 @@ const recipeCtrl = async () => {
         } catch (error) {
             alert('Something went wrong' + error);
         }
-
     }
 }
+
+// pagination controlls 
+
+selectors.paginationList.addEventListener('click', e => {
+    e.preventDefault();
+    const clicked = e.target.closest('li').dataset.gotopage;
+    if (clicked) {
+        const goToPage = parseInt(clicked, 10);
+        if (Number.isInteger(goToPage)) {
+            searchUI.clearResults();
+            searchUI.populateResults(data.search.recipes, goToPage);
+        } else {
+            searchUI.clearResults();
+            searchUI.populateResults(data.search.recipes, goToPage, 9, clicked);
+        }
+
+    }
+});
 
 
 

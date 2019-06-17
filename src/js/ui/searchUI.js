@@ -1,8 +1,15 @@
 import {
     selectors
 } from './selectors';
+import Pagination from './paginationUI';
 
 export const getInput = () => selectors.searchInput.value;
+
+export const clearResults = () => {
+    selectors.paginationList.innerHTML = '';
+    selectors.resultsList.innerHTML = '';
+};
+
 
 const unitPerPerson = (recipe, label) => {
     let nutrient;
@@ -56,7 +63,23 @@ const renderRecipe = (recipe) => {
 
 };
 
-export const populateResults = (recipes) => {
+export const populateResults = (recipes, pageNumber = 1, recipesPerPage = 9, name) => {
 
-    recipes.forEach(renderRecipe);
+    const startIndex = (pageNumber - 1) * recipesPerPage;
+    const endIndex = recipesPerPage * pageNumber;
+    console.log(name);
+
+    recipes.slice(startIndex, endIndex).forEach(renderRecipe);
+
+    // render pagination 
+    if (name) {
+        Pagination[name]();
+    } else {
+        Pagination.totalItems = recipes.length;
+        Pagination.pageCur = pageNumber;
+        Pagination.recipesPerPage = recipesPerPage;
+        Pagination.changePage(pageNumber);
+    }
+
+
 };
