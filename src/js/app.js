@@ -8,10 +8,10 @@ import * as searchUI from './ui/searchUI';
 
 // Event listener on search form submit
 
-// selectors.searchForm.addEventListener('submit', e => {
-//     recipeCtrl();
-//     e.preventDefault()
-// });
+selectors.searchForm.addEventListener('submit', e => {
+    recipeCtrl();
+    e.preventDefault()
+});
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -24,16 +24,19 @@ const data = {};
 // Recipe Controller
 
 const recipeCtrl = async () => {
-    // 1. Get input value 
-    // const query = searchUI.getInput();
-    const query = 'pizza'; // only for testing purposes
-    //    Check if input is not empty 
+    // 1. Get input value
+    const query = searchUI.getInput();
+    // const query = 'pizza'; // only for testing purposes
+
+    //    Check if input is not empty
     if (query) {
         // 2. Pass input value to new Search object
         data.search = new Search(query);
         console.log(data.search);
 
-        // 3. UI loader until search completed
+        // 3. Clear UI after search/for next search
+        searchUI.clearResults();
+        searchUI.clearSearchInput();
 
         // 4. Wait for input value to be searched
         try {
@@ -48,7 +51,7 @@ const recipeCtrl = async () => {
     }
 }
 
-// pagination controlls 
+// pagination controlls
 
 selectors.paginationList.addEventListener('click', e => {
     e.preventDefault();

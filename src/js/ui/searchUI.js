@@ -10,6 +10,10 @@ export const clearResults = () => {
     selectors.resultsList.innerHTML = '';
 };
 
+export const clearSearchInput = () => {
+    selectors.searchInput.value = '';
+}
+
 
 const unitPerPerson = (recipe, label) => {
     let nutrient;
