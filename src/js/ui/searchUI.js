@@ -65,16 +65,15 @@ const renderRecipe = (recipe) => {
 
 export const populateResults = (recipes, pageNumber = 1, recipesPerPage = 9, name) => {
 
-    const startIndex = (pageNumber - 1) * recipesPerPage;
-    const endIndex = recipesPerPage * pageNumber;
-    console.log(name);
+    const startIndex = (pageNumber, recipesPerPage) => (pageNumber - 1) * recipesPerPage;
+    const endIndex = (pageNumber, recipesPerPage) => recipesPerPage * pageNumber;
 
-    recipes.slice(startIndex, endIndex).forEach(renderRecipe);
-
-    // render pagination 
+    // render pagination
     if (name) {
         Pagination[name]();
+        recipes.slice(startIndex(Pagination.pageCur, recipesPerPage), endIndex(Pagination.pageCur, recipesPerPage)).forEach(renderRecipe);
     } else {
+        recipes.slice(startIndex(pageNumber, recipesPerPage), endIndex(pageNumber, recipesPerPage)).forEach(renderRecipe);
         Pagination.totalItems = recipes.length;
         Pagination.pageCur = pageNumber;
         Pagination.recipesPerPage = recipesPerPage;

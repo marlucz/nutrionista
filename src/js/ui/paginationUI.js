@@ -5,9 +5,9 @@ import {
 
 const Pagination = {
 
-    totalItems: 1,
-    recipesPerPage: 1,
-    pageCur: 1,
+    totalItems: '',
+    recipesPerPage: '9',
+    pageCur: '',
 
     totalPages: () => {
         return Math.ceil(Pagination.totalItems / Pagination.recipesPerPage);
@@ -16,22 +16,20 @@ const Pagination = {
     prevPage: () => {
         if (Pagination.pageCur > 1) {
             Pagination.pageCur--;
-            Pagination.changePage(Pagination.pageCur);
         }
+        Pagination.changePage(Pagination.pageCur);
     },
 
     nextPage: () => {
         if (Pagination.pageCur < Pagination.totalPages()) {
             Pagination.pageCur++;
-            Pagination.changePage(Pagination.pageCur);
         }
+        Pagination.changePage(Pagination.pageCur);
     },
 
     changePage: (page) => {
-        console.log(page);
         let pagination;
-        Pagination.pageCur = page;
-        console.log(page, Pagination.pageCur);
+
         // ensure current page isn't out of range
         if (Pagination.pageCur < 1) {
             Pagination.pageCur = 1;
@@ -42,7 +40,7 @@ const Pagination = {
         pagination = `
                 <li class="pagination__item" data-gotopage='prevPage'>
                                 <a href="" class="pagination__link"><span aria-hidden="true">«</span><span class="visuallyhidden">previous set of pages</span></a>
-                            </li>  
+                            </li>
                 `;
         for (let i = 1; i <= Pagination.totalPages(); i++) {
             pagination += `
@@ -54,7 +52,7 @@ const Pagination = {
         pagination += `
                 <li class="pagination__item" data-gotopage='nextPage'>
                      <a href="" class="pagination__link"><span aria-hidden="true">»</span><span class="visuallyhidden">next set of pages</span></a>
-                 </li>  
+                 </li>
                 `
         selectors.paginationList.insertAdjacentHTML('afterbegin', pagination);
 
