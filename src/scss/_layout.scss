@@ -217,9 +217,15 @@
         position: absolute;
         width: 35%;
         left: 60%;
-        top: 33vh;
+        top: 5vh;
+        max-height: 80vh;
         background-color: var(--color-grey);
         padding: 2rem;
+
+        &-list {
+            max-height: 45vh;
+            overflow-y: scroll;
+        }
 
         &-header {
             display: flex;

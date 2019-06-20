@@ -29,7 +29,6 @@ const data = {};
 const searchCtrl = async () => {
     // Get input value
     const query = searchUI.getInput();
-    // const query = 'pizza'; // only for testing purposes
 
     //    Check if input is not empty
     if (query) {
@@ -84,11 +83,13 @@ const recipeCtrl = async () => {
 
         data.recipe = new Recipe(id);
         try {
-            data.recipe.getRecipe();
+            await data.recipe.getRecipe();
+
+            // Render recipe
+            recipeUI.renderRecipe(data.recipe)
         } catch (error) {
             alert('Something went wrong' + error)
         }
-        console.log(data.recipe);
     }
 
 }
