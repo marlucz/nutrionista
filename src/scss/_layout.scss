@@ -118,16 +118,21 @@
         grid-gap: 2rem;
         overflow-y: scroll;
         padding-right: 5rem;
+
     }
 
-    &__link {
+    &__link,
+    &__link:link,
+    &__link:visited {
         display: grid;
         grid-template-rows: minmax(min-content, 20rem) min-content;
 
         &:hover {
             cursor: pointer;
         }
+
     }
+
 
     &-fig {
         position: relative;
@@ -156,6 +161,10 @@
     &__data {
         padding: 10px;
         background-color: var(--color-grey);
+
+        &--active {
+            background-color: var(--color-primary);
+        }
     }
 
 

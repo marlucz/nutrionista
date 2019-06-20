@@ -26,6 +26,17 @@ const unitPerPerson = (recipe, label) => {
     return nutrient;
 };
 
+export const selectedRecipe = id => {
+    const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+    resultsArr.forEach(el => {
+        console.log(el.children[1]);
+        el.children[1].classList.remove('results__data--active');
+    });
+    const selected = document.querySelector(`.results__link[href*="${id}"]`).children[1];
+    console.log(selected);
+    selected.classList.add('results__data--active');
+}
+
 const titleMaxLength = (title, length = 20) => {
     const newTitle = [];
     if (title.length > length) {
@@ -43,8 +54,8 @@ const titleMaxLength = (title, length = 20) => {
 
 const renderRecipe = (recipe) => {
     const listItem = `
-    <li class="list__item results__item">
-        <a class="results__link">
+    <li>
+        <a class="results__link link" href="#${recipe.uri.substr(51)}">
             <figure class="results-fig">
                 <img src="${recipe.image}" class ="results__img" alt="${recipe.label}">
                 <svg class="results-fig__icon">
@@ -68,7 +79,6 @@ const renderRecipe = (recipe) => {
 };
 
 export const populateResults = (recipes, pageNumber = 1, recipesPerPage = 9, name) => {
-
     const startIndex = (pageNumber, recipesPerPage) => (pageNumber - 1) * recipesPerPage;
     const endIndex = (pageNumber, recipesPerPage) => recipesPerPage * pageNumber;
 
@@ -83,6 +93,5 @@ export const populateResults = (recipes, pageNumber = 1, recipesPerPage = 9, nam
         Pagination.recipesPerPage = recipesPerPage;
         Pagination.changePage(pageNumber);
     }
-
 
 };
