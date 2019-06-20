@@ -132,11 +132,6 @@ export const renderRecipe = (recipe) => {
                     <span class="recipe__nutrient--unit">1g</span>
                     <span class="recipe__nutrient--quantity" title="daily value">5%</span>
                 </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
             </ul>
         </div>
         <div class="recipe__making">
