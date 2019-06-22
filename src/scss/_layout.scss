@@ -252,7 +252,8 @@
         }
     }
 
-    &__servings {
+    &__servings,
+    &__status {
         display: flex;
         align-items: center;
 

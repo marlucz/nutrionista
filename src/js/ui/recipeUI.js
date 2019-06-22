@@ -36,25 +36,24 @@ export const renderRecipe = (recipe) => {
                             <use xlink:href="./img/sprite.svg#icon-plus"></use>
                         </svg>
                     </button>
+                    </div>
+                <div class="recipe__status">
+                    <button class="btn btn-shopping">
+                        <svg class="btn-icon">
+                            <use xlink:href="./img/sprite.svg#icon-cart"></use>
+                        </svg>
+                    </button>
+                    <button class="btn btn-likes">
+                        <svg class="btn-icon">
+                            <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
+                        </svg>
+                    </button>
                 </div>
-                <button class="btn btn-shopping">
-                    <svg class="btn-icon">
-                        <use xlink:href="./img/sprite.svg#icon-cart"></use>
-                    </svg>
-                </button>
-                <button class="btn btn-likes">
-                    <svg class="btn-icon">
-                        <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
-                    </svg>
-                </button>
             </div>
             <ul class="list recipe__ingredients-list">
                 ${recipe.ingredients.map(el => {
                     return `
                     <li class="list__item recipe__ingredient">
-                        <svg class="recipe__ingredient-icon">
-                            <use xlink:href="./img/sprite.svg#icon-checkmark"></use>
-                        </svg>
                         <div class="recipe__ingredient-count">200
                             <span class="recipe__ingredient-count--unit">g</span>
                         </div>
