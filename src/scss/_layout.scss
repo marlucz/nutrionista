@@ -6,7 +6,7 @@
     grid-template-areas:
         "nav content"
         "footer content";
-    grid-template-columns: 10rem 1fr;
+    grid-template-columns: 8.5rem 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
@@ -24,7 +24,7 @@
         &-item {
             text-align: center;
             position: relative;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             line-height: 1.2;
 
             &:hover {
@@ -84,7 +84,7 @@
     grid-area: content;
     display: grid;
     grid-template-areas: "results recipe";
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding: 2rem 0;
 }
 
@@ -114,7 +114,7 @@
     &__list {
         grid-area: results-list;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         grid-gap: 2rem;
         overflow-y: scroll;
         padding-right: 5rem;
@@ -125,14 +125,13 @@
     &__link:link,
     &__link:visited {
         display: grid;
-        grid-template-rows: minmax(min-content, 20rem) min-content;
+        grid-template-rows: minmax(min-content, 16rem) min-content;
 
         &:hover {
             cursor: pointer;
         }
 
     }
-
 
     &-fig {
         position: relative;
@@ -154,12 +153,11 @@
         display: block;
         background-size: contain;
         width: 100%;
-        max-height: 20rem;
-
+        max-height: 16rem;
     }
 
     &__data {
-        padding: 10px;
+        padding: 8px;
         background-color: var(--color-grey);
 
         &--active {
@@ -171,9 +169,8 @@
 
     &__nutritions {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
-        justify-content: space-between;
-        font-size: 1.2rem;
+        grid-template-columns: repeat(auto-fit, minmax(1.1rem, 1fr));
+        justify-content: space-around;
         grid-gap: 10px;
     }
 
@@ -372,7 +369,7 @@
 .shopping {
     position: absolute;
     top: 0;
-    left: 10rem;
+    left: 8rem;
     transform: translateX(-150%);
     background-color: #fff;
     border: 1px solid var(--color-secondary);
@@ -411,7 +408,7 @@
 .likes {
     position: absolute;
     top: 0;
-    left: 10rem;
+    left: 8rem;
     transform: translateX(-150%);
     background-color: #fff;
     border: 1px solid var(--color-secondary);

@@ -54,8 +54,8 @@ export const renderRecipe = (recipe) => {
                 ${recipe.ingredients.map(el => {
                     return `
                     <li class="list__item recipe__ingredient">
-                        <div class="recipe__ingredient-count">200
-                            <span class="recipe__ingredient-count--unit">g</span>
+                        <div class="recipe__ingredient-count">
+                            <span class="recipe__ingredient-count--unit"></span>
                         </div>
                         <div class="recipe__ingredient-name">
                             ${el}

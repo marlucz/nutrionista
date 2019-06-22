@@ -5,7 +5,7 @@
 
     &-primary {
         text-transform: uppercase;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     &-secondary {
@@ -182,6 +182,7 @@
 
 
 .pagination {
+    padding-top: 2rem;
     grid-area: pagination;
     font-size: 1.5rem;
 
@@ -210,6 +211,6 @@
     }
 }
 
-/* There is no 'icon' component for svgs because there is too much different icons 
+/* There is no 'icon' component for svgs because there is too much different icons
     and I had problems naming them in the name of BEM methodology. I ended up having icon-med, icon-small, icon-heart, icon-primary(for color primary), etc etc. which looks too bootsrappy for me. So I decided to put icons as elements of their parent's block. More code and some code is repeated but works better for me in this case
 */
