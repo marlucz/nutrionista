@@ -84,7 +84,8 @@ const recipeCtrl = async () => {
         data.recipe = new Recipe(id);
         try {
             await data.recipe.getRecipe();
-
+            // parse ingredients
+            data.recipe.parseIngredient();
             // Render recipe
             recipeUI.renderRecipe(data.recipe)
         } catch (error) {

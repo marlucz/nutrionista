@@ -212,7 +212,7 @@
 
     &__ingredients {
         position: absolute;
-        width: 35%;
+        width: 30rem;
         left: 60%;
         top: 5vh;
         max-height: 80vh;
@@ -326,6 +326,10 @@
                 transform: scale(1.2);
             }
         }
+    }
+
+    &__author {
+        font-weight: 700;
     }
 }
 

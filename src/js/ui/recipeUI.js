@@ -65,11 +65,10 @@ export const renderRecipe = (recipe) => {
                 ${recipe.ingredients.map(el => {
                     return `
                     <li class="list__item recipe__ingredient">
-                        <div class="recipe__ingredient-count">
-                            <span class="recipe__ingredient-count--unit"></span>
-                        </div>
+                        <div class="recipe__ingredient-count"> ${el.amount ? el.amount : ''}</div>
+                        <div class="recipe__ingredient-count--unit">${el.unit ? el.unit : ''}</div>
                         <div class="recipe__ingredient-name">
-                            ${el}
+                            ${el.ingredient}
                         </div>
                     </li>
                     `
@@ -88,7 +87,7 @@ export const renderRecipe = (recipe) => {
         </div>
         <div class="recipe__making">
             <p class="recipe__making-text">Full recipe directions can be found on
-                <span class="recipe__author">Jon Doe</span>'s website</p>
+                <br/><span class="recipe__author">${recipe.author}</span></p>
             <a href="${recipe.url}" class="link recipe__making-source" target="_blank">
             <span>Get Recipe</span>
             </a>

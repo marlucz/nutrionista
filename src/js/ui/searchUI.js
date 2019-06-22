@@ -18,7 +18,7 @@ export const clearSearchInput = () => {
 const unitPerPerson = (recipe, label, method = 'totalNutrients') => {
     let nutrient;
     const nutrients = recipe[method];
-    Object.keys(nutrients).forEach((key) => {
+    Object.keys(nutrients).forEach(key => {
         if (nutrients[key].label === label) {
             nutrient = `${Math.round(nutrients[key].quantity/recipe.yield)} ${nutrients[key].unit}`
         }
