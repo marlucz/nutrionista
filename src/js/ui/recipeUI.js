@@ -7,6 +7,17 @@ export const clearRecipe = () => {
     selectors.recipeShow.innerHTML = '';
 }
 
+
+const nutrientsBasic = ['Energy', 'Protein', 'Carbs', 'Fat'];
+const nutrientsMore = ['Cholesterol', 'Saturated', 'Fiber', 'Sodium', 'Zinc', 'Potassium', 'Magnesium'];
+const createNutrient = (recipe, arrItem, method) => `
+        <li class="list__item recipe__nutrient">
+            <span class="recipe__nutrient--name">${arrItem}</span>
+            <span class="recipe__nutrient--unit">${unitPerPerson(recipe, arrItem)}</span>
+            <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, arrItem, method)}</span>
+        </li>
+        `;
+
 export const renderRecipe = (recipe) => {
     console.log(recipe);
     const recipeHtml = `
@@ -69,68 +80,10 @@ export const renderRecipe = (recipe) => {
         <div class="recipe__nutrients">
             <h3 class="heading-tertiary">Nutrition Facts per Serving</h3>
             <ul class="list recipe__nutrients-list recipe__nutrients-list--basic">
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Calories</span>
-                    <span class="recipe__nutrient--unit">${unitPerPerson(recipe, 'Energy')}</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, 'Energy', 'totalDaily')}</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Protein</span>
-                    <span class="recipe__nutrient--unit">${unitPerPerson(recipe, 'Protein')}</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, 'Protein', 'totalDaily')}</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Carbs</span>
-                    <span class="recipe__nutrient--unit">${unitPerPerson(recipe, 'Carbs')}</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, 'Carbs', 'totalDaily')}</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Fats</span>
-                    <span class="recipe__nutrient--unit">${unitPerPerson(recipe, 'Fat')}</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, 'Fat', 'totalDaily')}</span>
-                </li>
+                ${nutrientsBasic.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
             </ul>
             <ul class="list recipe__nutrients-list recipe__nutrients-list--more">
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Cholesterol</span>
-                    <span class="recipe__nutrient--unit">${unitPerPerson(recipe, 'Cholesterol')}</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, 'Cholesterol', 'totalDaily')}</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin1</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin2</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
-                <li class="list__item recipe__nutrient">
-                    <span class="recipe__nutrient--name">Vitamin3</span>
-                    <span class="recipe__nutrient--unit">1g</span>
-                    <span class="recipe__nutrient--quantity" title="daily value">5%</span>
-                </li>
+                ${nutrientsMore.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
             </ul>
         </div>
         <div class="recipe__making">
