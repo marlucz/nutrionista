@@ -232,21 +232,12 @@
     }
 
     &__ingredient {
-        display: flex;
+        display: grid;
+        grid-template-columns: 18% 20% 1fr;
         font-size: 1.5rem;
         line-height: 1.5rem;
         padding-bottom: 1rem;
 
-        &-icon {
-            width: 2rem;
-            height: 1.5rem;
-            fill: var(--color-secondary);
-            margin-right: 2rem;
-        }
-
-        &-count {
-            padding-right: 2rem;
-        }
     }
 
     &__servings,
