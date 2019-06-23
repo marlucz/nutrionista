@@ -78,55 +78,38 @@ export default class Recipe {
             const unitIndex = splitedIngr.findIndex(el2 => units.includes(el2));
 
             // declare object for ingredient items
-            let newIngredientObject;
+            let newIng;
 
-            // check whether there is a unit or quantity in the igredient array and generate corresponding to it object
+            // check if there is any unit at all
             if (unitIndex > -1) {
-                // There is a unit
-                // Ex. 4 1/2 cups, arrCount is [4, 1/2]
-                // Ex. 4 cups, arrCount is [4]
-                const arrCount = splitedIngr.slice(0, unitIndex);
-                let quantity;
-                if (arrCount.length === 1) {
-                    quantity = eval(splitedIngr[0].replace('-', '+'));
-                    console.log(quantity);
-                } else {
-                    quantity = eval(splitedIngr.slice(0, unitIndex).join('+'));
-                }
-
-                newIngredientObject = {
-                    quantity,
+                // there is unit
+                newIng = {
+                    quantity: splitedIngr.slice(0, unitIndex).join(' '),
                     unit: splitedIngr[unitIndex],
                     ingredient: splitedIngr.slice(unitIndex + 1).join(' ')
                 }
-
+                // else if there is no unit but there is quantity of something
             } else if (parseInt(splitedIngr[0], 10)) {
-                // There is no unit but 1st element is number
-                newIngredientObject = {
-                    quantity: parseInt(splitedIngr[0], 10),
+                //check if there is more than one number item in the array
+                const indexQuantities = splitedIngr.findIndex(ing => !parseInt(ing, 10));
+                newIng = {
+                    quantity: splitedIngr.slice(0, indexQuantities).join(' '),
                     unit: '',
-                    ingredient: splitedIngr.slice(1).join(' ')
+                    ingredient: splitedIngr.slice(indexQuantities).join(' ')
                 }
-            } else if (unitIndex === -1) {
-                // there is no unit and no number in 1st position
-                newIngredientObject = {
-                    quantity: 1,
-                    unit: '',
-                    ingredient
-                }
+                // else there is no unit and no number at first position of ingredient
             } else {
-                newIngredientObject = {
+                newIng = {
                     quantity: '',
                     unit: '',
-                    ingredient
-
+                    ingredient: el
                 }
             }
+
             //console.log(newIngredientObject);
-            return newIngredientObject;
+            return newIng;
         });
         this.ingredients = changedIngredients;
-
 
     }
 
