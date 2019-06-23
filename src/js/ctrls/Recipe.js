@@ -32,12 +32,8 @@ export default class Recipe {
 
 
     parseIngredient() {
-        if (!('contains' in String.prototype)) {
-            String.prototype.contains = function (str, startIndex) {
-                return -1 !== String.prototype.indexOf.call(this, str, startIndex);
-            };
-        }
-        const units = {
+        // object of unit replacements
+        const unitsMap = {
             tbsp: ['tablespoons', 'tablespoon', 'tbsps', 'tbsp'],
             tsp: ['teaspoons', 'teaspoon', 'tsps', 'tsp'],
             cup: ['cups', 'cup'],
@@ -52,19 +48,89 @@ export default class Recipe {
             kg: ['kilograms', 'kilogram', 'kgs', 'kg'],
             g: ['grams', 'gram', 'gs', 'g'],
             mg: ['miligrams', 'miligram', 'mgs', 'mg'],
-            inch: ['inches', 'inch', 'in']
+            inch: ['inches', 'inch', 'in'],
+            slice: ['slices', 'slice'],
+            handful: ['handful'],
+            pack: ['packs', 'pack'],
+            bunch: ['bunches', 'bunch'],
+            dash: ['dashes', 'dash'],
+            couple: ['couples', 'couple'],
+            touch: ['touches', 'touch'],
+            pinch: ['pinches', 'pinch']
         };
 
-
-        const replacements = Object.entries(units).map(([key, values]) => {
+        // generate pairs key and respective units
+        const replacements = Object.entries(unitsMap).map(([key, values]) => {
             values = values.map(s => `\\b${s}\\b`).join("|");
             return [key, new RegExp(values, "i")];
         });
-        console.log(replacements);
+
+        // make an array of abbreviation of untis
+        const units = replacements.map(item => item[0]);
+
+        // replace units from ingredient with its respective replacement from the replacements array
         const changedIngredients = this.ingredients.map(el => {
             replacements.forEach(([rep, regexp]) => el = el.replace(regexp, rep));
-            return el;
+
+            // split ingredient into quantity, unit and rest of ingredient
+            const splitedIngr = el.split(' ');
+            // check for index of the unit in the array
+            const unitIndex = splitedIngr.findIndex(el2 => units.includes(el2));
+
+            // declare object for ingredient items
+            let newIngredientObject;
+
+            // check whether there is a unit or quantity in the igredient array and generate corresponding to it object
+            if (unitIndex > -1) {
+                // There is a unit
+                // Ex. 4 1/2 cups, arrCount is [4, 1/2]
+                // Ex. 4 cups, arrCount is [4]
+                const arrCount = splitedIngr.slice(0, unitIndex);
+                let quantity;
+                if (arrCount.length === 1) {
+                    quantity = eval(splitedIngr[0].replace('-', '+'));
+                    console.log(quantity);
+                } else {
+                    quantity = eval(splitedIngr.slice(0, unitIndex).join('+'));
+                }
+
+                newIngredientObject = {
+                    quantity,
+                    unit: splitedIngr[unitIndex],
+                    ingredient: splitedIngr.slice(unitIndex + 1).join(' ')
+                }
+
+            } else if (parseInt(splitedIngr[0], 10)) {
+                // There is no unit but 1st element is number
+                newIngredientObject = {
+                    quantity: parseInt(splitedIngr[0], 10),
+                    unit: '',
+                    ingredient: splitedIngr.slice(1).join(' ')
+                }
+            } else if (unitIndex === -1) {
+                // there is no unit and no number in 1st position
+                newIngredientObject = {
+                    quantity: 1,
+                    unit: '',
+                    ingredient
+                }
+            } else {
+                newIngredientObject = {
+                    quantity: '',
+                    unit: '',
+                    ingredient
+
+                }
+            }
+            //console.log(newIngredientObject);
+            return newIngredientObject;
         });
+        this.ingredients = changedIngredients;
+
 
     }
+
+
+
+
 }

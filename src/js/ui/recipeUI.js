@@ -65,11 +65,9 @@ export const renderRecipe = (recipe) => {
                 ${recipe.ingredients.map(el => {
                     return `
                     <li class="list__item recipe__ingredient">
-                        <div class="recipe__ingredient-count"> ${el.amount ? el.amount : ''}</div>
-                        <div class="recipe__ingredient-count--unit">${el.unit ? el.unit : ''}</div>
-                        <div class="recipe__ingredient-name">
-                            ${el.ingredient}
-                        </div>
+                        <div class="recipe__ingredient-count">${el.quantity ? el.quantity : ''}</div>
+                        <div class="recipe__ingredient-count--unit">${el.unit ? el.unit + ' ' : ''}</div>
+                        <div class="recipe__ingredient-name">${el.ingredient}</div>
                     </li>
                     `
                 }).join('')}
