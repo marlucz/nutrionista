@@ -7,7 +7,7 @@ import {
 export default class Recipe {
     constructor(ID) {
         this.ID = ID;
-    }
+    };
 
     async getRecipe() {
         try {
@@ -28,17 +28,15 @@ export default class Recipe {
         } catch (error) {
             alert(error);
         }
-    }
-
-
+    };
 
     parseIngredient() {
         // object of unit replacements
         const unitsMap = {
-            tbsp: ['tablespoons', 'tablespoon', 'tbsps', 'tbsp'],
+            tbsp: ['tablespoons', 'tablespoon', 'tbsps', 'tbsp', 'tbs'],
             tsp: ['teaspoons', 'teaspoon', 'tsps', 'tsp'],
             cup: ['cups', 'cup'],
-            oz: ['ounces', 'ounce', 'oz.', 'oz'],
+            oz: ['ounces', 'ounce', 'oz'],
             pt: ['pints', 'pint', 'pt'],
             gal: ['gallons', 'gallon', 'gals', 'gal'],
             pound: ['pounds', 'pound', 'lbs', 'lb'],
@@ -86,7 +84,9 @@ export default class Recipe {
 
         // replace units from ingredient with its respective replacement from the replacements array
         const changedIngredients = this.ingredients.map(el => {
-
+            //remove dots from units before replacing them
+            el = el.replace('.', '');
+            //replace units
             replacements.forEach(([rep, regexp]) => el = el.replace(regexp, rep));
             el = el.replace(/ *\([^)]*\) */g, ' ');
 
@@ -100,6 +100,7 @@ export default class Recipe {
 
             // check if there is any unit
             if (unitIndex > -1) {
+                console.log(splitedIngr[unitIndex]);
                 newIng = {
                     quantity: evaluate(splitedIngr.slice(0, unitIndex)),
                     unit: splitedIngr[unitIndex],
@@ -125,7 +126,9 @@ export default class Recipe {
             return newIng;
         });
         this.ingredients = changedIngredients;
-    }
+    };
+
+
 
 
 

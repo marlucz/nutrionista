@@ -36,14 +36,14 @@ export const renderRecipe = (recipe) => {
             <h3 class="heading-tertiary">Ingredients</h3>
             <div class="recipe__ingredients-header">
                 <div class="recipe__servings">
-                    <button class="btn btn-servings btn-servings--minus">
+                    <button class="btn btn-servings" data-servings ="minus">
                         <svg class="btn-icon">
                             <use xlink:href="./img/sprite.svg#icon-minus"></use>
                         </svg>
                     </button>
                     <span class="recipe__servings-text">Servings</span>
-                    <span class="recipe__servings-value">1</span>
-                    <button class="btn btn-servings btn-servings--plus">
+                    <span class="recipe__servings-value">${recipe.yield}</span>
+                    <button class="btn btn-servings" data-servings ="plus">
                         <svg class="btn-icon">
                             <use xlink:href="./img/sprite.svg#icon-plus"></use>
                         </svg>
@@ -55,7 +55,7 @@ export const renderRecipe = (recipe) => {
                             <use xlink:href="./img/sprite.svg#icon-cart"></use>
                         </svg>
                     </button>
-                    <button class="btn btn-likes">
+                    <button class="btn btn-likes" data-likes="notLiked">
                         <svg class="btn-icon">
                             <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
                         </svg>

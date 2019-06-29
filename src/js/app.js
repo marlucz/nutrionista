@@ -95,6 +95,24 @@ const recipeCtrl = async () => {
 
 }
 
+// Handle ingredients event listeners
+selectors.recipeShow.addEventListener('click', (e) => {
+    const clicked = e.target.closest('button');
+    // handle increasing and decreasing servings quantity
+    if (clicked.dataset.servings) {
+        data.recipe.updateServings(clicked.dataset.servings);
+        recipeUI.changeIngredientsQuantity(data.recipe);
+    } else if (clicked.dataset.likes) {
+        // handle likes list to be done
+        console.log(clicked.dataset.likes);
+    } else if (clicked.classList.contains('btn-shopping')) {
+        // handle shopping list to be done
+        console.log(clicked);
+    }
+
+});
+
+
 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, recipeCtrl));
 
@@ -115,17 +133,19 @@ const recipeCtrl = async () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const btnShopping = document.querySelector('[data-nav="shopping-cart"]');
-    const btnFavourites = document.querySelector('[data-nav="favourites"]');
-    const shoppingList = document.querySelector('.shopping');
-    const favouritesList = document.querySelector('.likes');
-    btnShopping.addEventListener('click', () => {
-        shoppingList.classList.toggle('active');
-        favouritesList.classList.remove('active');
+
+    selectors.navShopping.addEventListener('click', () => {
+        selectors.shoppingList.classList.toggle('active');
+        selectors.favouritesList.classList.remove('active');
     });
-    btnFavourites.addEventListener('click', () => {
-        favouritesList.classList.toggle('active');
-        shoppingList.classList.remove('active');
+    selectors.navFavourites.addEventListener('click', () => {
+        selectors.favouritesList.classList.toggle('active');
+        selectors.shoppingList.classList.remove('active');
     });
+    selectors.navRecipes.addEventListener('click', () => {
+        selectors.favouritesList.classList.remove('active');
+        selectors.shoppingList.classList.remove('active');
+    });
+
 
 });
