@@ -7,9 +7,10 @@ export const clearRecipe = () => {
     selectors.recipeShow.innerHTML = '';
 }
 
-
+// arrays with nutrients
 const nutrientsBasic = ['Energy', 'Protein', 'Carbs', 'Fat'];
 const nutrientsMore = ['Cholesterol', 'Saturated', 'Fiber', 'Sodium', 'Zinc', 'Potassium', 'Magnesium'];
+
 const createNutrient = (recipe, arrItem, method) => `
         <li class="list__item recipe__nutrient">
             <span class="recipe__nutrient--name">${arrItem}</span>
