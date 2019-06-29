@@ -128,6 +128,19 @@ export default class Recipe {
         this.ingredients = changedIngredients;
     };
 
+    updateServings(action) {
+        let newYield;
+        if (action === 'plus') {
+            newYield = this.yield + 1;
+        } else if (action === 'minus') {
+            newYield = this.yield > 1 ? this.yield - 1 : this.yield;
+        }
+        this.ingredients.forEach(ing => {
+            ing.quantity = Math.round(ing.quantity * (newYield / this.yield) * 100) / 100;
+        });
+        this.yield = newYield;
+    };
+
 
 
 

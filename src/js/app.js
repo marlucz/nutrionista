@@ -101,7 +101,7 @@ selectors.recipeShow.addEventListener('click', (e) => {
     // handle increasing and decreasing servings quantity
     if (clicked.dataset.servings) {
         data.recipe.updateServings(clicked.dataset.servings);
-        recipeUI.changeIngredientsQuantity(data.recipe);
+        recipeUI.updateIngredients(data.recipe);
     } else if (clicked.dataset.likes) {
         // handle likes list to be done
         console.log(clicked.dataset.likes);

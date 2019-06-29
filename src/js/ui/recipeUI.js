@@ -96,3 +96,18 @@ export const renderRecipe = (recipe) => {
 
     selectors.recipeShow.insertAdjacentHTML('afterbegin', recipeHtml);
 };
+
+export const updateIngredients = recipe => {
+    document.querySelector('.recipe__servings-value').textContent = `${recipe.yield}`;
+    document.querySelector('.recipe__ingredients-list').innerHTML = `
+    ${recipe.ingredients.map(el => {
+        return `
+        <li class="list__item recipe__ingredient">
+            <div class="recipe__ingredient-count">${el.quantity ? el.quantity : ''}</div>
+            <div class="recipe__ingredient-count--unit">${el.unit ? el.unit + ' ' : ''}</div>
+            <div class="recipe__ingredient-name">${el.ingredient}</div>
+        </li>
+        `
+    }).join('')}
+`
+};
