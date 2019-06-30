@@ -1,11 +1,13 @@
 import '../scss/style.scss';
 import Search from './ctrls/Search';
 import Recipe from './ctrls/Recipe';
+import ShoppingCart from './ctrls/ShoppingCart';
 import {
     selectors
 } from './ui/selectors';
 import * as searchUI from './ui/searchUI';
 import * as recipeUI from './ui/recipeUI';
+import * as shoppingUI from './ui/shoppingUI';
 
 
 
@@ -95,6 +97,12 @@ const recipeCtrl = async () => {
 
 }
 
+
+
+['hashchange', 'load'].forEach(event => window.addEventListener(event, recipeCtrl));
+
+
+
 // Handle ingredients event listeners
 selectors.recipeShow.addEventListener('click', (e) => {
     const clicked = e.target.closest('button');
@@ -107,18 +115,22 @@ selectors.recipeShow.addEventListener('click', (e) => {
         console.log(clicked.dataset.likes);
     } else if (clicked.classList.contains('btn-shopping')) {
         // handle shopping list to be done
-        console.log(clicked);
+        shoppingCtrl();
     }
 
 });
 
 
+// Shopping cart controller
 
-['hashchange', 'load'].forEach(event => window.addEventListener(event, recipeCtrl));
+const shoppingCtrl = () => {
+    data.shopping = new ShoppingCart();
 
-
-
-
+    data.recipe.ingredients.forEach(el => {
+        const shoppingList = data.shopping.addItem(el.quantity, el.unit, el.ingredient);
+        shoppingUI.showShoppingList(shoppingList);
+    });
+};
 
 
 
@@ -135,16 +147,16 @@ selectors.recipeShow.addEventListener('click', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
 
     selectors.navShopping.addEventListener('click', () => {
-        selectors.shoppingList.classList.toggle('active');
-        selectors.favouritesList.classList.remove('active');
+        selectors.shoppingCart.classList.toggle('active');
+        selectors.favouritesCart.classList.remove('active');
     });
     selectors.navFavourites.addEventListener('click', () => {
-        selectors.favouritesList.classList.toggle('active');
-        selectors.shoppingList.classList.remove('active');
+        selectors.favouritesCart.classList.toggle('active');
+        selectors.shoppingCart.classList.remove('active');
     });
     selectors.navRecipes.addEventListener('click', () => {
-        selectors.favouritesList.classList.remove('active');
-        selectors.shoppingList.classList.remove('active');
+        selectors.favouritesCart.classList.remove('active');
+        selectors.shoppingCart.classList.remove('active');
     });
 
 

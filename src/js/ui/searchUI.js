@@ -15,7 +15,7 @@ export const clearSearchInput = () => {
 }
 
 
-const unitPerPerson = (recipe, label, method = 'totalNutrients') => {
+export const unitPerPerson = (recipe, label, method = 'totalNutrients') => {
     let nutrient;
     const nutrients = recipe[method];
     Object.keys(nutrients).forEach(key => {
@@ -31,7 +31,6 @@ export default unitPerPerson;
 export const selectedRecipe = id => {
     const resultsArr = Array.from(document.querySelectorAll('.results__link'));
     resultsArr.forEach(el => {
-        console.log(el.children[1]);
         el.children[1].classList.remove('results__data--active');
     });
     const selected = document.querySelector(`.results__link[href*="${id}"]`).children[1];
