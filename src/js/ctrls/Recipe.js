@@ -66,6 +66,11 @@ export default class Recipe {
 
         // convert fraction quantity to decimal / return decimal quantity
         const evaluate = (quantityArr) => {
+            // check for 'and' word between quantities
+            const andWordIndex = quantityArr.indexOf('and');
+            // if found delete that word from the quantity array
+            if (andWordIndex > -1) quantityArr.splice(andWordIndex, 1);
+            // will evaluate items only if array is not empty
             if (quantityArr[0]) {
                 const evaluated = quantityArr.map(arg => {
                     if (arg.indexOf("/") > -1) {
@@ -100,6 +105,7 @@ export default class Recipe {
 
             // check if there is any unit
             if (unitIndex > -1) {
+
                 newIng = {
                     quantity: evaluate(splitedIngr.slice(0, unitIndex)),
                     unit: splitedIngr[unitIndex],

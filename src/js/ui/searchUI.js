@@ -34,7 +34,6 @@ export const selectedRecipe = id => {
         el.children[1].classList.remove('results__data--active');
     });
     const selected = document.querySelector(`.results__link[href*="${id}"]`).children[1];
-    console.log(selected);
     selected.classList.add('results__data--active');
 }
 
