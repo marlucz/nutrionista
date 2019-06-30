@@ -123,6 +123,7 @@ selectors.recipeShow.addEventListener('click', (e) => {
 
 // Shopping cart controller
 
+// making a list from ingredients in the recipe
 const shoppingCtrl = () => {
     data.shopping = new ShoppingCart();
 
@@ -131,6 +132,13 @@ const shoppingCtrl = () => {
         shoppingUI.showShoppingList(shoppingList);
     });
 };
+// handle delete item
+selectors.shoppingCart.addEventListener('click', (e) => {
+    const clicked = e.target.closest('.btn-delete');
+    const id = clicked.parentNode.dataset.id;
+    data.shopping.deleteItem(id);
+    shoppingUI.deleteItem(id);
+});
 
 
 
