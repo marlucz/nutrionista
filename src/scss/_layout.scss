@@ -387,9 +387,9 @@
     }
 
     &__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 20% min-content;
+        grid-gap: 10px;
         font-size: 1.4rem;
         padding: 1rem 0;
 
