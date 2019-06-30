@@ -4,9 +4,8 @@ import {
 
 
 export const showShoppingList = (list) => {
-    console.log(list);
     const fragment = `
-    <li class="list__item shopping__item" id="${list.id}">
+    <li class="list__item shopping__item" data-id="${list.id}">
         <p class="shopping__name">${list.ingredient}</p>
         <p class="shopping__count">${list.quantity} ${list.unit}</p>
         <button class="btn btn-delete">
@@ -18,4 +17,9 @@ export const showShoppingList = (list) => {
     `;
 
     selectors.shoppingList.insertAdjacentHTML('beforeend', fragment);
+};
+
+export const deleteItem = id => {
+    const item = document.querySelector(`[data-id="${id}"]`);
+    if (item) item.parentElement.removeChild(item);
 };
