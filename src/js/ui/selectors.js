@@ -7,6 +7,7 @@ export const selectors = {
     navRecipes: document.querySelector('[data-nav="recipes"]'),
     navShopping: document.querySelector('[data-nav="shopping-cart"]'),
     navFavourites: document.querySelector('[data-nav="favourites"]'),
-    shoppingList: document.querySelector('.shopping'),
-    favouritesList: document.querySelector('.likes')
+    shoppingCart: document.querySelector('.shopping'),
+    shoppingList: document.querySelector('.shopping__list'),
+    favouritesCart: document.querySelector('.likes'),
 }

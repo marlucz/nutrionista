@@ -100,7 +100,6 @@ export default class Recipe {
 
             // check if there is any unit
             if (unitIndex > -1) {
-                console.log(splitedIngr[unitIndex]);
                 newIng = {
                     quantity: evaluate(splitedIngr.slice(0, unitIndex)),
                     unit: splitedIngr[unitIndex],
