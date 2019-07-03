@@ -2,12 +2,14 @@ import '../scss/style.scss';
 import Search from './ctrls/Search';
 import Recipe from './ctrls/Recipe';
 import ShoppingCart from './ctrls/ShoppingCart';
+import Likes from './ctrls/Likes';
 import {
     selectors
 } from './ui/selectors';
 import * as searchUI from './ui/searchUI';
 import * as recipeUI from './ui/recipeUI';
 import * as shoppingUI from './ui/shoppingUI';
+import * as likesUI from './ui/likesUI';
 
 
 
@@ -89,7 +91,7 @@ const recipeCtrl = async () => {
             // parse ingredients
             data.recipe.parseIngredient();
             // Render recipe
-            recipeUI.renderRecipe(data.recipe)
+            recipeUI.renderRecipe(data.recipe, 'true'); // to be changed
         } catch (error) {
             alert('Something went wrong' + error)
         }
@@ -110,9 +112,9 @@ selectors.recipeShow.addEventListener('click', (e) => {
     if (clicked.dataset.servings) {
         data.recipe.updateServings(clicked.dataset.servings);
         recipeUI.updateIngredients(data.recipe);
-    } else if (clicked.dataset.likes) {
+    } else if (clicked.closest('.btn-likes')) {
         // handle likes list to be done
-        console.log(clicked.dataset.likes);
+        likesCtrl(data.recipe.ID);
     } else if (clicked.classList.contains('btn-shopping')) {
         // handle shopping list to be done
         shoppingCtrl();
@@ -125,8 +127,10 @@ selectors.recipeShow.addEventListener('click', (e) => {
 
 // making a list from ingredients in the recipe
 const shoppingCtrl = () => {
-    data.shopping = new ShoppingCart();
+    // make new Shopping object if there isn't one already
+    if (!data.shopping) data.shopping = new ShoppingCart();
 
+    // add shopping list to UI
     data.recipe.ingredients.forEach(el => {
         const shoppingList = data.shopping.addItem(el.quantity, el.unit, el.ingredient);
         shoppingUI.showShoppingList(shoppingList);
@@ -141,7 +145,47 @@ selectors.shoppingCart.addEventListener('click', (e) => {
 });
 
 
+// Favourites list controller
 
+const likesCtrl = () => {
+    // make Likes object if there isn't one already
+    if (!data.likes) data.likes = new Likes();
+    const id = data.recipe.ID;
+
+    // check if passed recipe is not liked
+    if (!data.likes.checkIfLiked(id)) {
+        // add recipe to likes list
+        const like = data.likes.addLike(
+            id,
+            data.recipe.title,
+            data.recipe.img);
+
+        // add like to UI
+        likesUI.showFavouritesList(like);
+
+        // change outline of the heart on recipe
+        likesUI.changeHeartStatus(true);
+    } else {
+        // if recipe is liked
+
+        // delete like from likes list
+        data.likes.deleteLike(id);
+        // delete like from UI
+        likesUI.deleteLike(id);
+        // change outline of the heart on recipe
+        likesUI.changeHeartStatus(false);
+    }
+}
+
+selectors.favouritesList.addEventListener('click', (e) => {
+    const clickedID = e.target.closest('.btn-unlike').previousElementSibling.id;
+    // delete like from likes list
+    data.likes.deleteLike(clickedID);
+    // delete like from UI
+    likesUI.deleteLike(clickedID);
+    // change outline of the heart on recipe
+    if (clickedID === data.recipe.ID) likesUI.changeHeartStatus(false);
+})
 
 
 
