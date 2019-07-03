@@ -19,7 +19,7 @@ const createNutrient = (recipe, arrItem, method) => `
         </li>
         `;
 
-export const renderRecipe = (recipe) => {
+export const renderRecipe = (recipe, checkIfLiked) => {
     console.log(recipe);
     const recipeHtml = `
         <figure class="recipe__fig">
@@ -38,26 +38,26 @@ export const renderRecipe = (recipe) => {
                 <div class="recipe__servings">
                     <button class="btn btn-servings" data-servings ="minus">
                         <svg class="btn-icon">
-                            <use xlink:href="./img/sprite.svg#icon-minus"></use>
+                            <use href="./img/sprite.svg#icon-minus"></use>
                         </svg>
                     </button>
                     <span class="recipe__servings-text">Servings</span>
                     <span class="recipe__servings-value">${recipe.yield}</span>
                     <button class="btn btn-servings" data-servings ="plus">
                         <svg class="btn-icon">
-                            <use xlink:href="./img/sprite.svg#icon-plus"></use>
+                            <use href="./img/sprite.svg#icon-plus"></use>
                         </svg>
                     </button>
                     </div>
                 <div class="recipe__status">
                     <button class="btn btn-shopping">
                         <svg class="btn-icon">
-                            <use xlink:href="./img/sprite.svg#icon-cart"></use>
+                            <use href="./img/sprite.svg#icon-cart"></use>
                         </svg>
                     </button>
-                    <button class="btn btn-likes" data-likes="notLiked">
+                    <button class="btn btn-likes">
                         <svg class="btn-icon">
-                            <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
+                            <use href="./img/sprite.svg#${checkIfLiked? 'icon-heart':'icon-heart-outlined'}"></use>
                         </svg>
                     </button>
                 </div>

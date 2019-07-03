@@ -10,4 +10,6 @@ export const selectors = {
     shoppingCart: document.querySelector('.shopping'),
     shoppingList: document.querySelector('.shopping__list'),
     favouritesCart: document.querySelector('.likes'),
+    favouritesList: document.querySelector('.likes__list'),
+
 }
