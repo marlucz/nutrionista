@@ -58,9 +58,6 @@ const renderRecipe = (recipe) => {
         <a class="results__link link" href="#${recipe.uri.substr(51)}">
             <figure class="results-fig">
                 <img src="${recipe.image}" class ="results__img" alt="${recipe.label}">
-                <svg class="results-fig__icon">
-                    <use xlink:href="./img/sprite.svg#icon-heart-outlined"></use>
-                </svg>
             </figure>
             <div class="results__data">
                 <h4 class="heading-quarternary">${titleMaxLength(recipe.label)}</h4>
@@ -85,9 +82,14 @@ export const populateResults = (recipes, pageNumber = 1, recipesPerPage = 9, nam
     // render pagination
     if (name) {
         Pagination[name]();
-        recipes.slice(startIndex(Pagination.pageCur, recipesPerPage), endIndex(Pagination.pageCur, recipesPerPage)).forEach(renderRecipe);
+        recipes
+            .slice(startIndex(Pagination.pageCur, recipesPerPage),
+                endIndex(Pagination.pageCur, recipesPerPage))
+            .forEach(renderRecipe);
     } else {
-        recipes.slice(startIndex(pageNumber, recipesPerPage), endIndex(pageNumber, recipesPerPage)).forEach(renderRecipe);
+        recipes
+            .slice(startIndex(pageNumber, recipesPerPage), endIndex(pageNumber, recipesPerPage))
+            .forEach(renderRecipe);
         Pagination.totalItems = recipes.length;
         Pagination.pageCur = pageNumber;
         Pagination.recipesPerPage = recipesPerPage;

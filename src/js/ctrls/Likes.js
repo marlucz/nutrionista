@@ -16,15 +16,26 @@ export default class Likes {
         }
 
         this.likes.push(like);
-        console.log(this.likes);
+        // add item to local storage
+        this.storeLikes();
         return like;
     }
 
     deleteLike(id) {
-        console.log(id);
         const index = this.likes.findIndex(el => el.id == id);
-        console.log(index);
         this.likes.splice(index, 1);
+        // update local storage
+        this.storeLikes();
+    }
+
+    storeLikes() {
+        localStorage.setItem('storageLikes', JSON.stringify(this.likes));
+    }
+
+    getItemsFromStorage() {
+        const storageLikes = JSON.parse(localStorage.getItem('storageLikes'));
+        // set likes from local storage
+        if (storageLikes) this.likes = storageLikes;
     }
 
 }

@@ -91,7 +91,7 @@ const recipeCtrl = async () => {
             // parse ingredients
             data.recipe.parseIngredient();
             // Render recipe
-            recipeUI.renderRecipe(data.recipe, 'true'); // to be changed
+            recipeUI.renderRecipe(data.recipe, data.likes.checkIfLiked(id));
         } catch (error) {
             alert('Something went wrong' + error)
         }
@@ -165,17 +165,19 @@ const likesCtrl = () => {
 
         // change outline of the heart on recipe
         likesUI.changeHeartStatus(true);
-    } else {
-        // if recipe is liked
 
+    } else {
         // delete like from likes list
         data.likes.deleteLike(id);
         // delete like from UI
         likesUI.deleteLike(id);
         // change outline of the heart on recipe
         likesUI.changeHeartStatus(false);
+
     }
 }
+
+// Handle delete item from favourite list
 
 selectors.favouritesList.addEventListener('click', (e) => {
     const clickedID = e.target.closest('.btn-unlike').previousElementSibling.id;
@@ -187,14 +189,21 @@ selectors.favouritesList.addEventListener('click', (e) => {
     if (clickedID === data.recipe.ID) likesUI.changeHeartStatus(false);
 })
 
+// Get favourites from local storage on window load
+window.addEventListener('load', () => {
+    data.likes = new Likes();
+    // get items from local storage
+    data.likes.getItemsFromStorage();
+    // populate items to UI
+    data.likes.likes.forEach(el => likesUI.showFavouritesList(el));
+})
 
 
 
 
 
 
-
-
+// Handle nav list items opening and closing
 
 document.addEventListener('DOMContentLoaded', () => {
 
