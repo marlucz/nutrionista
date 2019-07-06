@@ -22,16 +22,18 @@ const createNutrient = (recipe, arrItem, method) => `
 export const renderRecipe = (recipe, checkIfLiked) => {
     console.log(recipe);
     const recipeHtml = `
-        <figure class="recipe__fig">
-            <img src="${recipe.img}" alt="${recipe.title}" class="recipe__img">
-            <h2 class="heading-secondary">${recipe.title}</h2>
-        </figure>
-        <div class="recipe__info">
-        ${recipe.healthLabels.map(el => {
-           return `<span class="recipe__info-text">${el}</span>`
-        }).join('')}
+    <div class="recipe__hero">
+        <div class="recipe__photo">
+            <figure class="recipe__fig">
+                <img src="${recipe.img}" alt="${recipe.title}" class="recipe__img">
+                <h2 class="heading-secondary">${recipe.title}</h2>
+            </figure>
+            <div class="recipe__info">
+            ${recipe.healthLabels.map(el => {
+                return `<span class="recipe__info-text">${el}</span>`
+            }).join('')}
+            </div>
         </div>
-
         <div class="recipe__ingredients">
             <h3 class="heading-tertiary">Ingredients</h3>
             <div class="recipe__ingredients-header">
@@ -75,22 +77,24 @@ export const renderRecipe = (recipe, checkIfLiked) => {
 
             </ul>
         </div>
-        <div class="recipe__nutrients">
-            <h3 class="heading-tertiary">Nutrition Facts per Serving</h3>
-            <ul class="list recipe__nutrients-list recipe__nutrients-list--basic">
-                ${nutrientsBasic.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
-            </ul>
-            <ul class="list recipe__nutrients-list recipe__nutrients-list--more">
-                ${nutrientsMore.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
-            </ul>
-        </div>
-        <div class="recipe__making">
-            <p class="recipe__making-text">Full recipe directions can be found on
-                <br/><span class="recipe__author">${recipe.author}</span></p>
-            <a href="${recipe.url}" class="link recipe__making-source" target="_blank">
-            <span>Get Recipe</span>
-            </a>
-        </div>
+    </div>
+    <div class="recipe__nutrients">
+        <h3 class="heading-tertiary">Nutrition Facts per Serving</h3>
+        <ul class="list recipe__nutrients-list recipe__nutrients-list--basic">
+            ${nutrientsBasic.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
+        </ul>
+        <ul class="list recipe__nutrients-list recipe__nutrients-list--more">
+            ${nutrientsMore.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
+        </ul>
+    </div>
+    <div class="recipe__making">
+        <p class="recipe__making-text">Full recipe directions can be found on
+            <br/><span class="recipe__author">${recipe.author}</span></p>
+        <a href="${recipe.url}" class="link recipe__making-source" target="_blank">
+        <span>Get Recipe</span>
+        </a>
+    </div>
+
 
 `;
 
