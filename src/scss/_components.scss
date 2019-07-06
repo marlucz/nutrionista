@@ -6,6 +6,11 @@
     &-primary {
         text-transform: uppercase;
         font-size: 1.2rem;
+
+
+        @include respond-to('large-dev') {
+            font-size: 1rem;
+        }
     }
 
     &-secondary {
@@ -26,8 +31,13 @@
     }
 
     &-quarternary {
+        @include respond-to('bigger-dev') {
+            font-size: 1.4rem;
+        }
+
         font-size: 1.6rem;
         padding-bottom: 5px;
+
     }
 }
 

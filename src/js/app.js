@@ -13,6 +13,9 @@ import * as likesUI from './ui/likesUI';
 
 
 
+
+
+
 // Event listener on search form submit
 
 selectors.searchForm.addEventListener('submit', e => {
@@ -203,10 +206,11 @@ window.addEventListener('load', () => {
 
 
 
-// Handle nav list items opening and closing
-
 document.addEventListener('DOMContentLoaded', () => {
+    // hide navigation item for recipe when not on mobile
+    // selectors.navRecipe.style.display = 'none';
 
+    // Handle nav list items opening and closing
     selectors.navShopping.addEventListener('click', () => {
         selectors.shoppingCart.classList.toggle('active');
         selectors.favouritesCart.classList.remove('active');
@@ -215,7 +219,11 @@ document.addEventListener('DOMContentLoaded', () => {
         selectors.favouritesCart.classList.toggle('active');
         selectors.shoppingCart.classList.remove('active');
     });
-    selectors.navRecipes.addEventListener('click', () => {
+    selectors.navSearch.addEventListener('click', () => {
+        selectors.favouritesCart.classList.remove('active');
+        selectors.shoppingCart.classList.remove('active');
+    });
+    selectors.navSearch.addEventListener('click', () => {
         selectors.favouritesCart.classList.remove('active');
         selectors.shoppingCart.classList.remove('active');
     });

@@ -8,6 +8,21 @@
         "footer content";
     grid-template-columns: 8.5rem 1fr;
     grid-template-rows: 1fr 1fr;
+
+
+    @include respond-to('large-dev') {
+        grid-template-columns: 7rem 1fr;
+    }
+
+    @include respond-to('small-dev') {
+        grid-template-areas:
+            "nav"
+            "content"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 6rem 1fr 7rem;
+    }
+
 }
 
 // ----------------- SIDE NAVIGATION ------------------
@@ -17,10 +32,31 @@
     padding-top: 2rem;
     color: var(--color-secondary);
     z-index: 10;
+
+    @include respond-to('small-dev') {
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        padding-top: 0;
+    }
+}
+
+[data-nav="recipe"] {
+    display: none;
+
+    @include respond-to('small-dev') {
+        display: block;
+    }
 }
 
 .nav {
     &__list {
+
+        @include respond-to ('small-dev') {
+            display: flex;
+            justify-content: space-between;
+            width: 70vw;
+        }
+
         &-item {
             text-align: center;
             position: relative;
@@ -35,17 +71,6 @@
             &:hover .nav__icon {
                 fill: var(--color-primary);
             }
-
-            &--active::before {
-                content: "";
-                display: block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                bottom: 0;
-                width: 4px;
-                background-color: var(--color-secondary);
-            }
         }
     }
 
@@ -53,6 +78,12 @@
         height: 4rem;
         width: 4rem;
         fill: var(--color-secondary);
+
+        @include respond-to('small-dev') {
+            height: 3rem;
+            width: 4rem;
+            margin-bottom: 2px;
+        }
     }
 
     &__link {
@@ -60,8 +91,11 @@
         flex-direction: column;
         align-items: center;
         padding-top: 1rem;
-    }
 
+        @include respond-to('small-dev') {
+            padding: 8px 0;
+        }
+    }
 }
 
 .header {
@@ -69,10 +103,21 @@
     text-align: center;
     margin-bottom: 2rem;
 
+    @include respond-to('small-dev') {
+        margin: 0;
+        padding-top: 5px;
+    }
+
     &__logo {
         width: 90%;
         height: 90%;
         padding-bottom: 5px;
+
+        @include respond-to('small-dev') {
+            height: 3rem;
+            width: 4rem;
+            padding-bottom: 0;
+        }
     }
 
 }
@@ -114,15 +159,19 @@
     &__list {
         grid-area: results-list;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
         grid-gap: 2rem;
         overflow-y: scroll;
         padding-right: 5rem;
 
+
+        @include respond-to('bigger-dev') {
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+        }
     }
 
     &__item {
-        max-width: 30rem;
+        max-width: 35rem;
     }
 
     &__link,
@@ -193,10 +242,18 @@
     padding: 5vh 2.5rem 0 0;
     position: relative;
 
+    @include respond-to('bigger-dev') {
+        overflow-y: auto;
+    }
 
     &__hero {
         display: grid;
-        grid-template-columns: minmax(40%, 1fr) 40%;
+        grid-template-columns: minmax(40%, 1fr) minmax(25rem, 40%);
+
+        @include respond-to('bigger-dev') {
+            grid-template-columns: 1fr;
+            grid-template-rows: minmax(min-content, 30vh) min-content;
+        }
     }
 
     &__fig {
@@ -206,9 +263,12 @@
     &__img {
         display: block;
         width: 100%;
-        min-height: 30rem;
-        max-height: 35vh;
+        min-height: 20rem;
+        max-height: 40vh;
 
+        @include respond-to ('big-dev') {
+            max-height: 30vh;
+        }
     }
 
     &__info {
@@ -276,6 +336,10 @@
                 justify-content: space-between;
                 font-size: 1.5rem;
                 line-height: 1.5;
+
+                @include respond-to('bigger-dev') {
+                    width: 100%;
+                }
             }
 
             &--more {
@@ -311,6 +375,11 @@
         transform: translateX(-50%);
         font-size: 1.6rem;
         text-align: center;
+
+        @include respond-to('bigger-dev') {
+            position: relative;
+            top: 0;
+        }
 
         &-source {
             margin-top: 1.5rem;
@@ -378,6 +447,17 @@
     border: 1px solid var(--color-secondary);
     height: 100vh;
     transition: transform 1s;
+    overflow-y: auto;
+
+
+    @include respond-to('bigger-dev') {
+        left: 7rem;
+    }
+
+    @include respond-to('small-dev') {
+        width: 100vw;
+        left: 0;
+    }
 
     &__header {
         position: absolute;
@@ -417,6 +497,16 @@
     border: 1px solid var(--color-secondary);
     height: 100vh;
     transition: transform 1s;
+    overflow-y: auto;
+
+    @include respond-to('bigger-dev') {
+        left: 7rem;
+    }
+
+    @include respond-to('small-dev') {
+        width: 100vw;
+        left: 0;
+    }
 
     &__header {
         position: absolute;
