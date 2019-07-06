@@ -3,12 +3,14 @@ $breakpoint argument choices:
 small-device : 768px / 16px = 42em,
 big-device : 900px/16px = 56.25em,
 bigger-device : 1024px/16px =  64em,
+large-dev : 1366px / 16px = 85.36em
 */
 
 $breakpoints: ('smallest-dev' : 31.25em,
     'small-dev': 48em,
     'big-dev': 56.25em,
     'bigger-dev': 64em,
+    'large-dev': 90em,
 );
 
 @mixin respond-to($breakpoint) {
