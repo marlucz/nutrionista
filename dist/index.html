@@ -21,12 +21,20 @@
             </header>
             <nav class="nav">
                 <ul class="list nav__list">
-                    <li class="list__item nav__list-item nav__list-item--active" data-nav="recipes">
+                    <li class="list__item nav__list-item nav__list-item--active" data-nav="search">
+                        <a href="#" class="link nav__link">
+                            <svg class="nav__icon">
+                                <use href="./img/sprite.svg#icon-search"></use>
+                            </svg>
+                            <p class="nav__paragraph">Search</p>
+                        </a>
+                    </li>
+                    <li class="list__item nav__list-item" data-nav="recipe">
                         <a href="#" class="link nav__link">
                             <svg class="nav__icon">
                                 <use href="./img/sprite.svg#icon-spoon-knife"></use>
                             </svg>
-                            <p>Recipes</p>
+                            <p class="nav__paragraph">Recipe</p>
                         </a>
                     </li>
                     <li class="list__item nav__list-item">
@@ -34,7 +42,7 @@
                             <svg class="nav__icon">
                                 <use href="./img/sprite.svg#icon-cart"></use>
                             </svg>
-                            <p>Shopping List</p>
+                            <p class="nav__paragraph">Shopping List</p>
                         </a>
                     </li>
                     <li class="list__item nav__list-item">
@@ -42,7 +50,7 @@
                             <svg class="nav__icon">
                                 <use href="./img/sprite.svg#icon-heart"></use>
                             </svg>
-                            <p>Favourites</p>
+                            <p class="nav__paragraph">Favourites</p>
                         </a>
                     </li>
                 </ul>
@@ -61,10 +69,10 @@
                     </button>
                 </form>
                 <ul class="list results__list">
-                    <!-- <li class="list__item results__item">
+                    <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -84,7 +92,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -104,7 +112,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -124,7 +132,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -144,7 +152,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -164,7 +172,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -184,7 +192,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -204,7 +212,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -224,7 +232,7 @@
                     <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
-                                <img src="https://unsplash.it/400/200" class ="results__img" alt="placeholder photo">
+                                <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
                                 <svg class="results-fig__icon">
                                     <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
@@ -240,13 +248,13 @@
                                 </ul>
                             </div>
                          </a>
-                    </li> -->
+                    </li>
 
                 </ul>
 
                 <nav class="pagination" aria-label="pagination">
                     <ul class="list pagination__list">
-                        <!-- <li class="pagination__item" id="btn_prev">
+                        <li class="pagination__item" id="btn_prev">
                             <a href="" class="pagination__link"><span aria-hidden="true">«</span><span class="visuallyhidden">previous set of pages</span></a>
                         </li>
                         <li class="pagination__item">
@@ -262,108 +270,184 @@
                         <li class="pagination__item">
                             <a href="" class="pagination__link"><span class="visuallyhidden">page </span>5</a></li>
                         <li class="pagination__item">
-                            <a href="" class="pagination__link" id="btn_next><span class="visuallyhidden">next set of pages</span><span aria-hidden="true">»</span></a>
-                        </li> -->
+                            <a href="" class="pagination__link" id="btn_next"><span class="visuallyhidden">next set of pages</span><span aria-hidden="true">»</span></a>
+                        </li>
                     </ul>
                 </nav>
             </section>
             <section class="recipe">
-                <!-- <figure class="recipe__fig">
-                    <img src="https://unsplash.it/200/200" alt="Fresh shake" class="recipe__img">
-                    <h2 class="heading-secondary">Green Smothie For Your Health</h2>
-                </figure>
-                <div class="recipe__info">
-                    <span class="recipe__info-text">Vegetarian</span>
-                    <span class="recipe__info-text">Gluten Free</span>
-                    <span class="recipe__info-text">Peanut Free</span>
-                    <span class="recipe__info-text">Low-Carb</span>
-                </div>
-
-                <div class="recipe__ingredients">
-                    <h3 class="heading-tertiary">Ingredients</h3>
-                    <div class="recipe__ingredients-header">
-                        <div class="recipe__servings">
-                            <button class="btn btn-servings btn-servings--minus">
+                <div class="recipe__hero">
+                    <div class="recipe__photo">
+                        <figure class="recipe__fig">
+                            <img src="https://unsplash.it/200/200" alt="Fresh shake" class="recipe__img">
+                            <h2 class="heading-secondary">Green Smothie For Your Health</h2>
+                        </figure>
+                        <div class="recipe__info">
+                            <span class="recipe__info-text">Vegetarian</span>
+                            <span class="recipe__info-text">Gluten Free</span>
+                            <span class="recipe__info-text">Peanut Free</span>
+                            <span class="recipe__info-text">Low-Carb</span>
+                        </div>
+                    </div>
+                    <div class="recipe__ingredients">
+                        <h3 class="heading-tertiary">Ingredients</h3>
+                        <div class="recipe__ingredients-header">
+                            <div class="recipe__servings">
+                                <button class="btn btn-servings btn-servings--minus">
+                                    <svg class="btn-icon">
+                                        <use href="./img/sprite.svg#icon-minus"></use>
+                                    </svg>
+                                </button>
+                                <span class="recipe__servings-text">Servings</span>
+                                <span class="recipe__servings-value">1</span>
+                                <button class="btn btn-servings btn-servings--plus">
+                                    <svg class="btn-icon">
+                                        <use href="./img/sprite.svg#icon-plus"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button class="btn btn-shopping">
                                 <svg class="btn-icon">
-                                    <use href="./img/sprite.svg#icon-minus"></use>
+                                    <use href="./img/sprite.svg#icon-cart"></use>
                                 </svg>
                             </button>
-                            <span class="recipe__servings-text">Servings</span>
-                            <span class="recipe__servings-value">1</span>
-                            <button class="btn btn-servings btn-servings--plus">
+                            <button class="btn btn-likes">
                                 <svg class="btn-icon">
-                                    <use href="./img/sprite.svg#icon-plus"></use>
+                                    <use href="./img/sprite.svg#icon-heart-outlined"></use>
                                 </svg>
                             </button>
                         </div>
-                        <button class="btn btn-shopping">
-                            <svg class="btn-icon">
-                                <use href="./img/sprite.svg#icon-cart"></use>
-                            </svg>
-                        </button>
-                        <button class="btn btn-likes">
-                            <svg class="btn-icon">
-                                <use href="./img/sprite.svg#icon-heart-outlined"></use>
-                            </svg>
-                        </button>
+                        <ul class="list recipe__ingredients-list">
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                            <li class="list__item recipe__ingredient">
+                                <div class="recipe__ingredient-count">200
+                                    <span class="recipe__ingredient-count--unit">g</span>
+                                </div>
+                                <div class="recipe__ingredient-name">
+                                    Cheese
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <ul class="list recipe__ingredients-list">
-                        <li class="list__item recipe__ingredient">
-                            <svg class="recipe__ingredient-icon">
-                                <use href="./img/sprite.svg#icon-checkmark"></use>
-                            </svg>
-                            <div class="recipe__ingredient-count">200
-                                <span class="recipe__ingredient-count--unit">g</span>
-                            </div>
-                            <div class="recipe__ingredient-name">
-                                Cheese
-                            </div>
-                        </li>
-                        <li class="list__item recipe__ingredient">
-                            <svg class="recipe__ingredient-icon">
-                                <use href="./img/sprite.svg#icon-checkmark"></use>
-                            </svg>
-                            <div class="recipe__ingredient-count">200
-                                <span class="recipe__ingredient-count--unit">g</span>
-                            </div>
-                            <div class="recipe__ingredient-name">
-                                Cheese
-                            </div>
-                        </li>
-                        <li class="list__item recipe__ingredient">
-                            <svg class="recipe__ingredient-icon">
-                                <use href="./img/sprite.svg#icon-checkmark"></use>
-                            </svg>
-                            <div class="recipe__ingredient-count">200
-                                <span class="recipe__ingredient-count--unit">g</span>
-                            </div>
-                            <div class="recipe__ingredient-name">
-                                Cheese
-                            </div>
-                        </li>
-                        <li class="list__item recipe__ingredient">
-                            <svg class="recipe__ingredient-icon">
-                                <use href="./img/sprite.svg#icon-checkmark"></use>
-                            </svg>
-                            <div class="recipe__ingredient-count">200
-                                <span class="recipe__ingredient-count--unit">g</span>
-                            </div>
-                            <div class="recipe__ingredient-name">
-                                Cheese
-                            </div>
-                        </li>
-                        <li class="list__item recipe__ingredient">
-                            <svg class="recipe__ingredient-icon">
-                                <use href="./img/sprite.svg#icon-checkmark"></use>
-                            </svg>
-                            <div class="recipe__ingredient-count">200
-                                <span class="recipe__ingredient-count--unit">g</span>
-                            </div>
-                            <div class="recipe__ingredient-name">
-                                Cheese
-                            </div>
-                        </li>
-                    </ul>
                 </div>
                 <div class="recipe__nutrients">
                     <h3 class="heading-tertiary">Nutrition Facts</h3>
@@ -443,12 +527,12 @@
                     <a href="http://leitesculinaria.com/94320/recipes-breakfast-pizza.html" class="link recipe__making-source" target="_blank">
                     <span>Get Recipe</span>
                     </a>
-                </div> -->
+                </div>
             </section>
             <section class="shopping">
                 <h3 class="heading-tertiary shopping__header">Shopping List</h3>
                 <ul class="list shopping__list">
-                    <!--
+
                     <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
@@ -457,14 +541,14 @@
                                 <use href="./img/sprite.svg#icon-cross"></use>
                             </svg>
                         </button>
-                    </li> -->
+                    </li>
 
                 </ul>
             </section>
             <section class="likes">
                 <h3 class="heading-tertiary likes__header">Your Favourite Recipes</h3>
                 <ul class="list likes__list">
-                    <!-- <li class="list__item likes__item">
+                    <li class="list__item likes__item">
                         <a class="link likes__link">
                             <figure class="likes__fig">
                                 <img src="img/placeholder.png" alt="placeholder photo">
@@ -479,7 +563,7 @@
                             </svg>
                         </button>
                     </li>
- -->
+
 
                 </ul>
             </section>
