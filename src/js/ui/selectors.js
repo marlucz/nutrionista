@@ -1,5 +1,5 @@
 export const selectors = {
-
+    content: document.querySelector('.content'),
     searchForm: document.querySelector('.search'),
     searchInput: document.querySelector('.search__input'),
     resultsList: document.querySelector('.results__list'),

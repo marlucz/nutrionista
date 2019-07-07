@@ -95,6 +95,7 @@ const recipeCtrl = async () => {
             data.recipe.parseIngredient();
             // Render recipe
             recipeUI.renderRecipe(data.recipe, data.likes.checkIfLiked(id));
+            selectors.recipeShow.classList.add('active__mobile');
         } catch (error) {
             alert('Something went wrong' + error)
         }
@@ -207,8 +208,6 @@ window.addEventListener('load', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // hide navigation item for recipe when not on mobile
-    // selectors.navRecipe.style.display = 'none';
 
     // Handle nav list items opening and closing
     selectors.navShopping.addEventListener('click', () => {
@@ -222,11 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
     selectors.navSearch.addEventListener('click', () => {
         selectors.favouritesCart.classList.remove('active');
         selectors.shoppingCart.classList.remove('active');
+        selectors.recipeShow.classList.remove('active__mobile');
     });
-    selectors.navSearch.addEventListener('click', () => {
+    selectors.navRecipe.addEventListener('click', () => {
+        selectors.recipeShow.classList.add('active__mobile');
         selectors.favouritesCart.classList.remove('active');
         selectors.shoppingCart.classList.remove('active');
     });
-
 
 });

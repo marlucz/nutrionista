@@ -1,12 +1,13 @@
 /*
 $breakpoint argument choices:
+smallest-device : 600px/16px = 37.5em,
 small-device : 768px / 16px = 42em,
 big-device : 900px/16px = 56.25em,
 bigger-device : 1024px/16px =  64em,
 large-dev : 1366px / 16px = 85.36em
 */
 
-$breakpoints: ('smallest-dev' : 31.25em,
+$breakpoints: ('smallest-dev' : 37.5em,
     'small-dev': 48em,
     'big-dev': 56.25em,
     'bigger-dev': 64em,

@@ -17,6 +17,11 @@
         font-size: 2rem;
         color: var(--color-light);
         background-color: rgba(0, 0, 0, 0.5);
+
+        @include respond-to('smallest-dev') {
+            top: 50%;
+            padding: 2rem;
+        }
     }
 
     &-tertiary {
@@ -24,6 +29,7 @@
         margin-bottom: 1.5rem;
         border-bottom: 2px solid var(--color-primary);
         display: inline-block;
+
     }
 
     &-quarternary {
@@ -206,6 +212,10 @@
         font-size: 1.2rem;
     }
 
+    @include respond-to('small-dev') {
+        padding-top: 2px;
+    }
+
     &__list {
         margin: 0;
         padding: 0;
@@ -223,6 +233,10 @@
         padding: .5em 1em;
         text-decoration: none;
         color: var(--color-secondary);
+
+        @include respond-to('small-dev') {
+            padding: 3px 7px;
+        }
     }
 
     &__link[aria-current="page"] {
