@@ -543,18 +543,13 @@
 .shopping {
     position: absolute;
     top: 0;
-    left: 8rem;
+    left: 7rem;
     transform: translateX(-150%);
     background-color: #fff;
     border: 1px solid var(--color-secondary);
     height: 100vh;
     transition: transform 1s;
     overflow-y: auto;
-
-
-    @include respond-to('bigger-dev') {
-        left: 7rem;
-    }
 
     @include respond-to('small-dev') {
         width: 50vw;
@@ -599,16 +594,13 @@
 .likes {
     position: absolute;
     top: 0;
-    left: 8rem;
+    left: 7rem;
     transform: translateX(-150%);
     background-color: #fff;
     border: 1px solid var(--color-secondary);
     height: 100vh;
     transition: transform 1s;
 
-    @include respond-to('bigger-dev') {
-        left: 7rem;
-    }
 
     @include respond-to('small-dev') {
         width: 50vw;

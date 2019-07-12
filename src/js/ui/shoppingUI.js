@@ -10,7 +10,7 @@ export const showShoppingList = (list) => {
         <p class="shopping__count">${list.quantity} ${list.unit}</p>
         <button class="btn btn-delete">
             <svg class="btn-icon">
-                <use href="./img/sprite.svg#icon-cross"></use>
+                <use xlink:href="./img/sprite.svg#icon-cross"></use>
             </svg>
         </button>
     </li>

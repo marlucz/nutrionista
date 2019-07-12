@@ -8,7 +8,7 @@ export const changeHeartStatus = (boolean) => {
     // in firefox .setAttribute('href', `./img/sprite.svg#${heartIcon}` ) was working just fine
     document.querySelector('.btn-likes').innerHTML = `
     <svg class="btn-icon">
-        <use href="./img/sprite.svg#${heartIcon}"></use>
+        <use xlink:href="./img/sprite.svg#${heartIcon}"></use>
     </svg>
     `
 }
@@ -26,7 +26,7 @@ export const showFavouritesList = (like) => {
         </a>
         <button class="btn btn-unlike">
             <svg class="btn-icon">
-                <use href="./img/sprite.svg#icon-heart"></use>
+                <use xlink:href="./img/sprite.svg#icon-heart"></use>
             </svg>
         </button>
     </li>

@@ -40,26 +40,26 @@ export const renderRecipe = (recipe, checkIfLiked) => {
                 <div class="recipe__servings">
                     <button class="btn btn-servings" data-servings ="minus">
                         <svg class="btn-icon">
-                            <use href="./img/sprite.svg#icon-minus"></use>
+                            <use xlink:href="./img/sprite.svg#icon-minus"></use>
                         </svg>
                     </button>
                     <span class="recipe__servings-text">Servings</span>
                     <span class="recipe__servings-value">${recipe.yield}</span>
                     <button class="btn btn-servings" data-servings ="plus">
                         <svg class="btn-icon">
-                            <use href="./img/sprite.svg#icon-plus"></use>
+                            <use xlink:href="./img/sprite.svg#icon-plus"></use>
                         </svg>
                     </button>
                     </div>
                 <div class="recipe__status">
                     <button class="btn btn-shopping">
                         <svg class="btn-icon">
-                            <use href="./img/sprite.svg#icon-cart"></use>
+                            <use xlink:href="./img/sprite.svg#icon-cart"></use>
                         </svg>
                     </button>
                     <button class="btn btn-likes">
                         <svg class="btn-icon">
-                            <use href="./img/sprite.svg#${checkIfLiked? 'icon-heart':'icon-heart-outlined'}"></use>
+                            <use xlink:href="./img/sprite.svg#${checkIfLiked? 'icon-heart':'icon-heart-outlined'}"></use>
                         </svg>
                     </button>
                 </div>
