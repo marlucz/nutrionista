@@ -1,260 +1,348 @@
 // ------------------- HEADING -------------------
 
 .heading {
-    font-weight: 700;
+  font-weight: 700;
 
-    &-primary {
-        text-transform: uppercase;
-        font-size: 1rem;
+  &-primary {
+    text-transform: uppercase;
+    font-size: 1rem;
+  }
 
+  &-secondary {
+    position: absolute;
+    top: 70%;
+    left: 0;
+    padding: 2rem 2rem 2rem 5rem;
+    font-size: 2rem;
+    color: var(--color-light);
+    background-color: rgba(0, 0, 0, 0.5);
+
+    @include respond-to("smallest-dev") {
+      top: 50%;
+      padding: 2rem;
+    }
+  }
+
+  &-tertiary {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+  }
+
+  &-quarternary {
+    @include respond-to("bigger-dev") {
+      font-size: 1.4rem;
     }
 
-    &-secondary {
-        position: absolute;
-        top: 70%;
-        left: 0;
-        padding: 2rem 2rem 2rem 5rem;
-        font-size: 2rem;
-        color: var(--color-light);
-        background-color: rgba(0, 0, 0, 0.5);
-
-        @include respond-to('smallest-dev') {
-            top: 50%;
-            padding: 2rem;
-        }
-    }
-
-    &-tertiary {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        border-bottom: 2px solid var(--color-primary);
-        display: inline-block;
-
-    }
-
-    &-quarternary {
-        @include respond-to('bigger-dev') {
-            font-size: 1.4rem;
-        }
-
-        font-size: 1.6rem;
-        padding-bottom: 5px;
-
-    }
+    font-size: 1.6rem;
+    padding-bottom: 5px;
+  }
 }
 
 // ------------------- BUTTON -------------------
 
 .btn {
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
 
-    &-icon {
-        width: 70%;
-        height: 70%;
-        fill: var(--color-secondary);
+  &-icon {
+    width: 70%;
+    height: 70%;
+    fill: var(--color-secondary);
 
-        &:hover {
-            fill: var(--color-primary);
-        }
+    &:hover {
+      fill: var(--color-primary);
+    }
+  }
+
+  &-search {
+    height: 2.5rem;
+    width: 2.5rem;
+
+    &:hover .icon-full-btn {
+      fill: var(--color-primary);
     }
 
-    &-search {
-        height: 2.5rem;
-        width: 2.5rem;
-
-        &:hover .icon-full-btn {
-            fill: var(--color-primary);
-        }
-
-        &:focus {
-            outline: none;
-        }
-
-        &:active {
-            transform: translateY(2px);
-        }
+    &:focus {
+      outline: none;
     }
 
-    &-servings {
-        border: 2px solid var(--color-secondary);
-        border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
+    &:active {
+      transform: translateY(2px);
+    }
+  }
 
-        @include respond-to('large-dev') {
-            width: 2.5rem;
-            height: 2.5rem;
-        }
+  &-servings {
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
 
-        &:hover {
-            border: 2px solid var(--color-primary);
-        }
-
-        &:hover .btn-icon svg {
-            fill: var(--color-primary);
-        }
+    @include respond-to("large-dev") {
+      width: 2.5rem;
+      height: 2.5rem;
     }
 
-    &-shopping,
-    &-likes {
-        width: 3.5rem;
-        height: 3.5rem;
-
-        @include respond-to('large-dev') {
-            width: 3.5rem;
-            height: 3.5rem;
-        }
+    &:hover {
+      border: 2px solid var(--color-primary);
     }
 
-    &-delete {
-        width: 2rem;
-        height: 2rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .5s;
-
-        @include respond-to('small-dev') {
-            visibility: visible;
-            opacity: 1;
-        }
+    &:hover .btn-icon svg {
+      fill: var(--color-primary);
     }
+  }
 
-    &-unlike {
-        width: 4rem;
-        height: 4rem;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .5s;
+  &-shopping,
+  &-likes {
+    width: 3.5rem;
+    height: 3.5rem;
 
-        @include respond-to('small-dev') {
-            visibility: visible;
-            opacity: 1;
-        }
+    @include respond-to("large-dev") {
+      width: 3.5rem;
+      height: 3.5rem;
     }
+  }
 
+  &-delete {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+
+    @include respond-to("small-dev") {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &-unlike {
+    width: 4rem;
+    height: 4rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+
+    @include respond-to("small-dev") {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
 }
 
 // ------------------- LIST NORMALIZE -------------------
 .list {
-    list-style: none;
+  list-style: none;
 
-    &__item {
-        text-decoration: none;
-    }
+  &__item {
+    text-decoration: none;
+  }
 }
 
 // ------------------- LINKS NORMALIZE -------------------
 .link {
-    display: inline-block;
-    text-decoration: none;
+  display: inline-block;
+  text-decoration: none;
 
-    &:link,
-    &:visited {
-        color: inherit;
-    }
+  &:link,
+  &:visited {
+    color: inherit;
+  }
 }
 
 // ------------------- SEARCH -------------------
 .search {
-    padding: 0;
-    padding-bottom: 2rem;
-    margin: 0;
-    grid-area: search;
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 0;
+  padding-bottom: 2rem;
+  margin: 0;
+  grid-area: search;
+  flex: 0 0 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    &__input {
-        font-family: inherit;
-        font-size: 1.5rem;
-        color: inherit;
-        border: none;
-        border-bottom: 1px solid var(--color-dark);
-        padding: .7rem 2rem;
-        width: 80%;
-        transition: all .2s;
-        margin-right: -3.25rem;
+  &__input {
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+    border: none;
+    border-bottom: 1px solid var(--color-dark);
+    padding: 0.7rem 2rem;
+    width: 80%;
+    transition: all 0.2s;
+    margin-right: -3.25rem;
 
-        &:focus {
-            outline: none;
-            border-bottom: 1px solid var(--color-primary);
-            color: var(--color-secondary);
-        }
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid var(--color-primary);
+      color: var(--color-secondary);
     }
+  }
 
-    &__icon {
-        height: 100%;
-        width: 100%;
-    }
-
+  &__icon {
+    height: 100%;
+    width: 100%;
+  }
 }
-
 
 // ------------------- PAGINATION -------------------
 /* class to hide content visually leaving it available to screenreaders.
  Thank you Mozilla Developer
 */
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: auto;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 
-
 .pagination {
-    padding-top: 1.5rem;
-    grid-area: pagination;
-    font-size: 1.5rem;
+  padding-top: 1.5rem;
+  grid-area: pagination;
+  font-size: 1.5rem;
 
-    @include respond-to('large-dev') {
-        font-size: 1.2rem;
+  @include respond-to("large-dev") {
+    font-size: 1.2rem;
+  }
+
+  @include respond-to("small-dev") {
+    padding-top: 2px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 1px;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: var(--color-secondary);
+
+    @include respond-to("small-dev") {
+      padding: 3px 7px;
     }
+  }
 
-    @include respond-to('small-dev') {
-        padding-top: 2px;
-    }
-
-    &__list {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-
-    }
-
-    &__item {
-        margin: 0 1px;
-    }
-
-    &__link {
-        display: block;
-        padding: .5em 1em;
-        text-decoration: none;
-        color: var(--color-secondary);
-
-        @include respond-to('small-dev') {
-            padding: 3px 7px;
-        }
-    }
-
-    &__link[aria-current="page"] {
-        border: 2px solid var(--color-primary);
-        border-radius: 50%;
-    }
+  &__link[aria-current="page"] {
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+  }
 }
 
 /* There is no 'icon' component for svgs because there is too much different icons
     and I had problems naming them in the name of BEM methodology. I ended up having icon-med, icon-small, icon-heart, icon-primary(for color primary), etc etc. which looks too bootsrappy for me. So I decided to put icons as elements of their parent's block. More code and some code is repeated but works better for me in this case
 */
+
+// ----------------LOADER-----------------
+
+@keyframes loader {
+  0% {
+    width: 10%;
+    transform: rotate(0deg);
+  }
+  10% {
+    left: 0%;
+    transform: rotate(0deg);
+  }
+  20% {
+    width: 0%;
+    left: 20%;
+  }
+  30% {
+    width: 25%;
+  }
+  50% {
+    left: 15%;
+    width: 35%;
+  }
+  70% {
+    width: 30%;
+    left: 18%;
+    transform: rotate(240deg);
+  }
+  90% {
+    width: 30%;
+    left: 10%;
+  }
+  100% {
+    width: 2%;
+    left: 25%;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pan {
+  0% {
+    transform: rotate(0deg);
+    transform-origin: top right;
+  }
+  10% {
+    transform: rotate(-2deg);
+    transform-origin: top right;
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.pan-loader {
+  width: 200px;
+  height: 200px;
+  margin: 100px auto;
+  z-index: 10;
+}
+.loader {
+  position: relative;
+  top: 10%;
+  left: 0;
+  z-index: 0;
+  width: 60%;
+  height: 45%;
+  border: 10px solid transparent;
+  border-bottom: 10px solid var(--color-primary);
+  border-radius: 50%;
+  animation: loader 1s infinite;
+  animation-timing-function: linear;
+}
+.pan-container {
+  display: flex;
+  width: 100%;
+  animation: pan 1s infinite;
+}
+.pan {
+  width: 60%;
+  height: 20px;
+  background-color: var(--color-secondary);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.handle {
+  width: 40%;
+  height: 10px;
+  background-color: var(--color-secondary);
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}

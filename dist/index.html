@@ -1,75 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+    />
     <title>Nutrionista - Recipe App</title>
-<link href="style.css" rel="stylesheet"></head>
+  <link href="style.css" rel="stylesheet"></head>
 
-<body>
+  <body>
     <div class="container">
+      <div class="sidebar">
+        <header class="header">
+          <img
+            src="img/logo_full.png"
+            alt="logo image presenting shef's hat"
+            class="header__logo"
+          />
+          <h1 class="heading-primary">nutrionista</h1>
+        </header>
+        <nav class="nav">
+          <ul class="list nav__list">
+            <li
+              class="list__item nav__list-item nav__list-item--active"
+              data-nav="search"
+            >
+              <a href="#" class="link nav__link">
+                <svg class="nav__icon">
+                  <use xlink:href="./img/sprite.svg#icon-search"></use>
+                </svg>
+                <p class="nav__paragraph">Search</p>
+              </a>
+            </li>
+            <li class="list__item nav__list-item" data-nav="recipe">
+              <a href="#" class="link nav__link">
+                <svg class="nav__icon">
+                  <use xlink:href="./img/sprite.svg#icon-spoon-knife"></use>
+                </svg>
+                <p class="nav__paragraph">Recipe</p>
+              </a>
+            </li>
+            <li class="list__item nav__list-item">
+              <a href="#" class="link nav__link" data-nav="shopping-cart">
+                <svg class="nav__icon">
+                  <use xlink:href="./img/sprite.svg#icon-cart"></use>
+                </svg>
+                <p class="nav__paragraph">Shopping List</p>
+              </a>
+            </li>
+            <li class="list__item nav__list-item">
+              <a
+                href="#"
+                class="link icon--secondary nav__link"
+                data-nav="favourites"
+              >
+                <svg class="nav__icon">
+                  <use xlink:href="./img/sprite.svg#icon-heart"></use>
+                </svg>
+                <p class="nav__paragraph">Favourites</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-
-        <div class="sidebar">
-            <header class="header">
-                <img src="img/logo_full.png" alt="logo image presenting shef's hat" class="header__logo">
-                <h1 class="heading-primary">nutrionista</h1>
-            </header>
-            <nav class="nav">
-                <ul class="list nav__list">
-                    <li class="list__item nav__list-item nav__list-item--active" data-nav="search">
-                        <a href="#" class="link nav__link">
-                            <svg class="nav__icon">
-                                <use xlink:href="./img/sprite.svg#icon-search"></use>
-                            </svg>
-                            <p class="nav__paragraph">Search</p>
-                        </a>
-                    </li>
-                    <li class="list__item nav__list-item" data-nav="recipe">
-                        <a href="#" class="link nav__link">
-                            <svg class="nav__icon">
-                                <use xlink:href="./img/sprite.svg#icon-spoon-knife"></use>
-                            </svg>
-                            <p class="nav__paragraph">Recipe</p>
-                        </a>
-                    </li>
-                    <li class="list__item nav__list-item">
-                        <a href="#" class="link nav__link" data-nav="shopping-cart">
-                            <svg class="nav__icon">
-                                <use xlink:href="./img/sprite.svg#icon-cart"></use>
-                            </svg>
-                            <p class="nav__paragraph">Shopping List</p>
-                        </a>
-                    </li>
-                    <li class="list__item nav__list-item">
-                        <a href="#" class="link icon--secondary nav__link" data-nav="favourites">
-                            <svg class="nav__icon">
-                                <use xlink:href="./img/sprite.svg#icon-heart"></use>
-                            </svg>
-                            <p class="nav__paragraph">Favourites</p>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-
-        <div class="content">
-
-            <section class="results">
-                <form action="#" class="search">
-                    <input type="text" class="search__input" placeholder="Find recipe" required>
-                    <button class="btn btn-search">
-                        <svg class="search__icon">
-                            <use xlink:href="./img/sprite.svg#icon-search"></use>
-                        </svg>
-                    </button>
-                </form>
-                <ul class="list results__list">
-                    <!-- <li class="list__item results__item">
+      <div class="content">
+        <section class="results">
+          <form action="#" class="search">
+            <input
+              type="text"
+              class="search__input"
+              placeholder="Find recipe"
+              required
+            />
+            <button class="btn btn-search">
+              <svg class="search__icon">
+                <use xlink:href="./img/sprite.svg#icon-search"></use>
+              </svg>
+            </button>
+          </form>
+          <ul class="list results__list">
+            <!-- <li class="list__item results__item">
                         <a class="results__link">
                             <figure class="results-fig">
                                 <img src="https://unsplash.it/400" class ="results__img" alt="placeholder photo">
@@ -89,11 +104,11 @@
                             </div>
                          </a>
                     </li> -->
-                </ul>
+          </ul>
 
-                <nav class="pagination" aria-label="pagination">
-                    <ul class="list pagination__list">
-                        <!-- <li class="pagination__item" id="btn_prev">
+          <nav class="pagination" aria-label="pagination">
+            <ul class="list pagination__list">
+              <!-- <li class="pagination__item" id="btn_prev">
                             <a href="" class="pagination__link"><span aria-hidden="true">«</span><span class="visuallyhidden">previous set of pages</span></a>
                         </li>
                         <li class="pagination__item">
@@ -111,11 +126,11 @@
                         <li class="pagination__item">
                             <a href="" class="pagination__link" id="btn_next"><span class="visuallyhidden">next set of pages</span><span aria-hidden="true">»</span></a>
                         </li> -->
-                    </ul>
-                </nav>
-            </section>
-            <section class="recipe">
-                <!-- <div class="recipe__hero">
+            </ul>
+          </nav>
+        </section>
+        <section class="recipe">
+          <!-- <div class="recipe__hero">
                     <div class="recipe__photo">
                         <figure class="recipe__fig">
                             <img src="https://unsplash.it/200/200" alt="Fresh shake" class="recipe__img">
@@ -192,11 +207,11 @@
                     <span>Get Recipe</span>
                     </a>
                 </div> -->
-            </section>
-            <section class="shopping">
-                <h3 class="heading-tertiary shopping__header">Shopping List</h3>
-                <ul class="list shopping__list">
-                    <!-- <li class="list__item shopping__item">
+        </section>
+        <section class="shopping">
+          <h3 class="heading-tertiary shopping__header">Shopping List</h3>
+          <ul class="list shopping__list">
+            <!-- <li class="list__item shopping__item">
                         <p class="shopping__name">Cheese</p>
                         <p class="shopping__count">100g</p>
                         <button class="btn btn-delete">
@@ -205,12 +220,12 @@
                             </svg>
                         </button>
                     </li> -->
-                </ul>
-            </section>
-            <section class="likes">
-                <h3 class="heading-tertiary likes__header">Your Favourite Recipes</h3>
-                <ul class="list likes__list">
-                    <!-- <li class="list__item likes__item">
+          </ul>
+        </section>
+        <section class="likes">
+          <h3 class="heading-tertiary likes__header">Your Favourite Recipes</h3>
+          <ul class="list likes__list">
+            <!-- <li class="list__item likes__item">
                         <a class="link likes__link">
                             <figure class="likes__fig">
                                 <img src="img/placeholder.png" alt="placeholder photo">
@@ -225,43 +240,45 @@
                             </svg>
                         </button>
                     </li> -->
-                </ul>
-            </section>
-
-        </div>
-        <div class="footer">
-            <ul class="list footer-list">
-                <li class="list__item footer-list__item" data-footer="facebook">
-                    <a href="#" class="link footer-list__link">
-                        <svg class="footer__icon">
-                            <use xlink:href="./img/sprite.svg#icon-facebook"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="list__item footer-list__item" data-footer="instagram">
-                    <a href="#" class="link footer-list__link">
-                        <svg class="footer__icon">
-                            <use xlink:href="./img/sprite.svg#icon-instagram"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="list__item footer-list__item" data-footer="youtube">
-                    <a href="#" class="link footer-list__link">
-                        <svg class="footer__icon">
-                            <use xlink:href="./img/sprite.svg#icon-youtube"></use>
-                        </svg>
-                    </a>
-                </li>
-                <li class="list__item footer-list__item" data-footer="github">
-                    <a href="https://github.com/Bukacz/nutrionista" target="_blank" class="link footer-list__link">
-                        <svg class="footer__icon">
-                            <use xlink:href="./img/sprite.svg#icon-github"></use>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </div>
+          </ul>
+        </section>
+      </div>
+      <div class="footer">
+        <ul class="list footer-list">
+          <li class="list__item footer-list__item" data-footer="facebook">
+            <a href="#" class="link footer-list__link">
+              <svg class="footer__icon">
+                <use xlink:href="./img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="list__item footer-list__item" data-footer="instagram">
+            <a href="#" class="link footer-list__link">
+              <svg class="footer__icon">
+                <use xlink:href="./img/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="list__item footer-list__item" data-footer="youtube">
+            <a href="#" class="link footer-list__link">
+              <svg class="footer__icon">
+                <use xlink:href="./img/sprite.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="list__item footer-list__item" data-footer="github">
+            <a
+              href="https://github.com/Bukacz/nutrionista"
+              target="_blank"
+              class="link footer-list__link"
+            >
+              <svg class="footer__icon">
+                <use xlink:href="./img/sprite.svg#icon-github"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-<script type="text/javascript" src="main.js"></script></body>
-
+  <script type="text/javascript" src="main.js"></script></body>
 </html>

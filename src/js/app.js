@@ -3,6 +3,7 @@ import Search from './ctrls/Search';
 import Recipe from './ctrls/Recipe';
 import ShoppingCart from './ctrls/ShoppingCart';
 import Likes from './ctrls/Likes';
+import {addLoader, clearLoader} from './ui/loaderUI';
 import {
     selectors
 } from './ui/selectors';
@@ -45,11 +46,13 @@ const searchCtrl = async () => {
         // Clear UI after search/for next search
         searchUI.clearResults();
         searchUI.clearSearchInput();
-
+        // render loader
+        addLoader(selectors.resultsList);
         // Wait for input value to be searched
         try {
             await data.search.searchResults();
-
+            //clear loader before populate results
+            clearLoader();
             // Populate results to UI
             searchUI.populateResults(data.search.recipes);
         } catch (error) {
@@ -89,10 +92,14 @@ const recipeCtrl = async () => {
         if (data.search) searchUI.selectedRecipe(id);
 
         data.recipe = new Recipe(id);
+                // render loader
+                addLoader(selectors.recipeShow);
         try {
             await data.recipe.getRecipe();
             // parse ingredients
             data.recipe.parseIngredient();
+            // clear loader before render recipe
+            clearLoader();
             // Render recipe
             recipeUI.renderRecipe(data.recipe, data.likes.checkIfLiked(id));
             selectors.recipeShow.classList.add('active__mobile');
