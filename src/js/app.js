@@ -10,17 +10,23 @@ import * as recipeUI from "./ui/recipeUI";
 import * as shoppingUI from "./ui/shoppingUI";
 import * as likesUI from "./ui/likesUI";
 
-// Set proper height of viewport for mobiles
-window.addEventListener("resize", () => {
-  console.log("dupa");
+const heightListeners = ["resize", "DOMContentLoaded"];
 
-  // execute the same script as before
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
+heightListeners.forEach(listener =>
+  window.addEventListener(listener, () => {
+    let vh = window.innerHeight;
+    document.documentElement.style.setProperty("--viewHeight", `${vh}px`);
+  })
+);
+
+// // Set proper height of viewport for mobiles
+// window.addEventListener("resize", () => {
+//   // execute the same script as before
+//   let vh = window.innerHeight * 0.01;
+//   document.documentElement.style.setProperty("--vh", `${vh}px`);
+// });
 
 // Event listener on search form submit
-
 selectors.searchForm.addEventListener("submit", e => {
   searchCtrl();
   e.preventDefault();

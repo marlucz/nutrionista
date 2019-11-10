@@ -7,15 +7,16 @@ bigger-device : 1024px/16px =  64em,
 large-dev : 1366px / 16px = 85.36em
 */
 
-$breakpoints: ('smallest-dev' : 37.5em,
-    'small-dev': 48em,
-    'big-dev': 56.25em,
-    'bigger-dev': 64em,
-    'large-dev': 90em,
+$breakpoints: (
+  "smallest-dev": 37.5em,
+  "small-dev": 42em,
+  "big-dev": 56.25em,
+  "bigger-dev": 64em,
+  "large-dev": 90em
 );
 
 @mixin respond-to($breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
-        @content;
-    }
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
 }
