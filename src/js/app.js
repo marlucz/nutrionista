@@ -19,13 +19,6 @@ heightListeners.forEach(listener =>
   })
 );
 
-// // Set proper height of viewport for mobiles
-// window.addEventListener("resize", () => {
-//   // execute the same script as before
-//   let vh = window.innerHeight * 0.01;
-//   document.documentElement.style.setProperty("--vh", `${vh}px`);
-// });
-
 // Event listener on search form submit
 selectors.searchForm.addEventListener("submit", e => {
   searchCtrl();
