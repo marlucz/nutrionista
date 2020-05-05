@@ -12,7 +12,7 @@ import * as likesUI from "./ui/likesUI";
 
 const heightListeners = ["resize", "DOMContentLoaded"];
 
-heightListeners.forEach(listener =>
+heightListeners.forEach((listener) =>
   window.addEventListener(listener, () => {
     let vh = window.innerHeight;
     document.documentElement.style.setProperty("--viewHeight", `${vh}px`);
@@ -20,7 +20,7 @@ heightListeners.forEach(listener =>
 );
 
 // Event listener on search form submit
-selectors.searchForm.addEventListener("submit", e => {
+selectors.searchForm.addEventListener("submit", (e) => {
   searchCtrl();
   e.preventDefault();
 });
@@ -63,7 +63,7 @@ const searchCtrl = async () => {
 
 // Pagination controlls
 
-selectors.paginationList.addEventListener("click", e => {
+selectors.paginationList.addEventListener("click", (e) => {
   e.preventDefault();
   const clicked = e.target.closest("li").dataset.gotopage;
   if (clicked) {
@@ -102,20 +102,20 @@ const recipeCtrl = async () => {
       recipeUI.renderRecipe(data.recipe, data.likes.checkIfLiked(id));
       selectors.recipeShow.classList.add("active__mobile");
     } catch (error) {
-      alert("Something went wrong" + error);
+      console.alert("Something went wrong" + error);
     }
   }
 };
 
-["hashchange", "load"].forEach(event =>
+["hashchange", "load"].forEach((event) =>
   window.addEventListener(event, recipeCtrl)
 );
 
 // Handle ingredients event listeners
-selectors.recipeShow.addEventListener("click", e => {
+selectors.recipeShow.addEventListener("click", (e) => {
   const clicked = e.target.closest("button");
   // handle increasing and decreasing servings quantity
-  if (clicked.dataset.servings) {
+  if (clicked.dataset && clicked.dataset.servings) {
     data.recipe.updateServings(clicked.dataset.servings);
     recipeUI.updateIngredients(data.recipe);
   } else if (clicked.closest(".btn-likes")) {
@@ -135,7 +135,7 @@ const shoppingCtrl = () => {
   if (!data.shopping) data.shopping = new ShoppingCart();
 
   // add shopping list to UI
-  data.recipe.ingredients.forEach(el => {
+  data.recipe.ingredients.forEach((el) => {
     const shoppingList = data.shopping.addItem(
       el.quantity,
       el.unit,
@@ -145,7 +145,7 @@ const shoppingCtrl = () => {
   });
 };
 // handle delete item
-selectors.shoppingCart.addEventListener("click", e => {
+selectors.shoppingCart.addEventListener("click", (e) => {
   const clicked = e.target.closest(".btn-delete");
   const id = clicked.parentNode.dataset.id;
   data.shopping.deleteItem(id);
@@ -181,7 +181,7 @@ const likesCtrl = () => {
 
 // Handle delete item from favourite list
 
-selectors.favouritesList.addEventListener("click", e => {
+selectors.favouritesList.addEventListener("click", (e) => {
   const clickedID = e.target.closest(".btn-unlike").previousElementSibling.id;
   // delete like from likes list
   data.likes.deleteLike(clickedID);
@@ -197,7 +197,7 @@ window.addEventListener("load", () => {
   // get items from local storage
   data.likes.getItemsFromStorage();
   // populate items to UI
-  data.likes.likes.forEach(el => likesUI.showFavouritesList(el));
+  data.likes.likes.forEach((el) => likesUI.showFavouritesList(el));
 });
 
 document.addEventListener("DOMContentLoaded", () => {

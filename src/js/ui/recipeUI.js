@@ -1,37 +1,53 @@
-import {
-    selectors
-} from './selectors';
-import unitPerPerson from './searchUI';
+import { selectors } from "./selectors";
+import unitPerPerson from "./searchUI";
 
 export const clearRecipe = () => {
-    selectors.recipeShow.innerHTML = '';
-}
+  selectors.recipeShow.innerHTML = "";
+};
 
 // arrays with nutrients
-const nutrientsBasic = ['Energy', 'Protein', 'Carbs', 'Fat'];
-const nutrientsMore = ['Cholesterol', 'Saturated', 'Fiber', 'Sodium', 'Zinc', 'Potassium', 'Magnesium'];
+const nutrientsBasic = ["Energy", "Protein", "Carbs", "Fat"];
+const nutrientsMore = [
+  "Cholesterol",
+  "Saturated",
+  "Fiber",
+  "Sodium",
+  "Zinc",
+  "Potassium",
+  "Magnesium",
+];
 
 const createNutrient = (recipe, arrItem, method) => `
         <li class="list__item recipe__nutrient">
             <span class="recipe__nutrient--name">${arrItem}</span>
-            <span class="recipe__nutrient--unit">${unitPerPerson(recipe, arrItem)}</span>
-            <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(recipe, arrItem, method)}</span>
+            <span class="recipe__nutrient--unit">${unitPerPerson(
+              recipe,
+              arrItem
+            )}</span>
+            <span class="recipe__nutrient--quantity" title="daily value">${unitPerPerson(
+              recipe,
+              arrItem,
+              method
+            )}</span>
         </li>
         `;
 
 export const renderRecipe = (recipe, checkIfLiked) => {
-    console.log(recipe);
-    const recipeHtml = `
+  const recipeHtml = `
     <div class="recipe__hero">
         <div class="recipe__photo">
             <figure class="recipe__fig">
-                <img src="${recipe.img}" alt="${recipe.title}" class="recipe__img">
+                <img src="${recipe.img}" alt="${
+    recipe.title
+  }" class="recipe__img">
                 <h2 class="heading-secondary">${recipe.title}</h2>
             </figure>
             <div class="recipe__info">
-            ${recipe.healthLabels.map(el => {
-                return `<span class="recipe__info-text">${el}</span>`
-            }).join('')}
+            ${recipe.healthLabels
+              .map((el) => {
+                return `<span class="recipe__info-text">${el}</span>`;
+              })
+              .join("")}
             </div>
         </div>
         <div class="recipe__ingredients">
@@ -59,21 +75,33 @@ export const renderRecipe = (recipe, checkIfLiked) => {
                     </button>
                     <button class="btn btn-likes">
                         <svg class="btn-icon">
-                            <use xlink:href="./img/sprite.svg#${checkIfLiked? 'icon-heart':'icon-heart-outlined'}"></use>
+                            <use xlink:href="./img/sprite.svg#${
+                              checkIfLiked
+                                ? "icon-heart"
+                                : "icon-heart-outlined"
+                            }"></use>
                         </svg>
                     </button>
                 </div>
             </div>
             <ul class="list recipe__ingredients-list">
-                ${recipe.ingredients.map(el => {
+                ${recipe.ingredients
+                  .map((el) => {
                     return `
                     <li class="list__item recipe__ingredient">
-                        <div class="recipe__ingredient-count">${el.quantity ? el.quantity : ''}</div>
-                        <div class="recipe__ingredient-count--unit">${el.unit ? el.unit + ' ' : ''}</div>
-                        <div class="recipe__ingredient-name">${el.ingredient}</div>
+                        <div class="recipe__ingredient-count">${
+                          el.quantity ? el.quantity : ""
+                        }</div>
+                        <div class="recipe__ingredient-count--unit">${
+                          el.unit ? el.unit + " " : ""
+                        }</div>
+                        <div class="recipe__ingredient-name">${
+                          el.ingredient
+                        }</div>
                     </li>
-                    `
-                }).join('')}
+                    `;
+                  })
+                  .join("")}
 
             </ul>
         </div>
@@ -81,16 +109,22 @@ export const renderRecipe = (recipe, checkIfLiked) => {
     <div class="recipe__nutrients">
         <h3 class="heading-tertiary">Nutrition Facts per Serving</h3>
         <ul class="list recipe__nutrients-list recipe__nutrients-list--basic">
-            ${nutrientsBasic.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
+            ${nutrientsBasic
+              .map((el) => createNutrient(recipe, el, "totalDaily"))
+              .join("")}
         </ul>
         <ul class="list recipe__nutrients-list recipe__nutrients-list--more">
-            ${nutrientsMore.map(el=> createNutrient(recipe, el, 'totalDaily')).join('')}
+            ${nutrientsMore
+              .map((el) => createNutrient(recipe, el, "totalDaily"))
+              .join("")}
         </ul>
     </div>
     <div class="recipe__making">
         <p class="recipe__making-text">Full recipe directions can be found on
             <br/><span class="recipe__author">${recipe.author}</span></p>
-        <a href="${recipe.url}" class="link recipe__making-source" target="_blank">
+        <a href="${
+          recipe.url
+        }" class="link recipe__making-source" target="_blank">
         <span>Get Recipe</span>
         </a>
     </div>
@@ -98,20 +132,28 @@ export const renderRecipe = (recipe, checkIfLiked) => {
 
 `;
 
-    selectors.recipeShow.insertAdjacentHTML('afterbegin', recipeHtml);
+  selectors.recipeShow.insertAdjacentHTML("afterbegin", recipeHtml);
 };
 
-export const updateIngredients = recipe => {
-    document.querySelector('.recipe__servings-value').textContent = `${recipe.yield}`;
-    document.querySelector('.recipe__ingredients-list').innerHTML = `
-    ${recipe.ingredients.map(el => {
+export const updateIngredients = (recipe) => {
+  document.querySelector(
+    ".recipe__servings-value"
+  ).textContent = `${recipe.yield}`;
+  document.querySelector(".recipe__ingredients-list").innerHTML = `
+    ${recipe.ingredients
+      .map((el) => {
         return `
         <li class="list__item recipe__ingredient">
-            <div class="recipe__ingredient-count">${el.quantity ? el.quantity : ''}</div>
-            <div class="recipe__ingredient-count--unit">${el.unit ? el.unit + ' ' : ''}</div>
+            <div class="recipe__ingredient-count">${
+              el.quantity ? el.quantity : ""
+            }</div>
+            <div class="recipe__ingredient-count--unit">${
+              el.unit ? el.unit + " " : ""
+            }</div>
             <div class="recipe__ingredient-name">${el.ingredient}</div>
         </li>
-        `
-    }).join('')}
-`
+        `;
+      })
+      .join("")}
+`;
 };
